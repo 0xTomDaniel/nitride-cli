@@ -158,10 +158,10 @@ export function query(
   const index = new Map<string, Row>();
   const resolve: ResolveFile = (link, from) => {
     let target = link;
-    if (target.startsWith("[[") && target.endsWith("]]"))
-      target = target.slice(2, -2);
+    const wikilink = target.startsWith("[[") && target.endsWith("]]");
+    if (wikilink) target = target.slice(2, -2);
     target = target.split("|")[0]!.split("#")[0]!;
-    if (!target) return from;
+    if (!target) return wikilink ? from : null;
     if (
       target.startsWith("/") ||
       target.includes("://") ||

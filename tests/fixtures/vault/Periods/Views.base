@@ -64,6 +64,11 @@
         "file.basename",
         "sprint"
       ]
+    },
+    {
+      "type": "table",
+      "name": "Self references",
+      "filters": "file.name.startsWith(\"Self\") && list(week).filter(file(value).properties.week_start <= date(\"2026-09-07\") && file(value).properties.week_end >= date(\"2026-09-07\")).length > 0"
     }
   ]
 }

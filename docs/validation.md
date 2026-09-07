@@ -88,3 +88,12 @@ interpreter still never executes Base input as JavaScript.
 
 The skill eval catalog now describes supported period queries separately from
 unsupported formulas; these prompt updates are not fresh model-eval evidence.
+
+## Self-reference review repair
+
+A native-recorded regression distinguishes empty/plain references from actual
+self-wikilinks. Six synthetic tasks carry their own period dates: empty text,
+plain heading text and null must not acquire membership from those dates;
+`[[]]`, `[[|Alias]]` and `[[#Heading]]` may resolve to the current note. The
+public CLI replay failed before the resolver preserved the original wikilink
+form. This expands conformance to 80 native cases and 103 public CLI tests.

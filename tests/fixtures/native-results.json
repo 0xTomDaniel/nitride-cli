@@ -3,7 +3,7 @@
     "timezone": "America/Denver",
     "provider": "Official Obsidian CLI",
     "version": "1.13.7 (installer 1.12.4)",
-    "capturedAt": "2026-09-07T21:22:16.578Z",
+    "capturedAt": "2026-09-07T22:35:34.446Z",
     "platform": "darwin",
     "disposableVault": true,
     "normalization": "None",
@@ -129,12 +129,36 @@
         "sha256": "a4066f497ca88bf30cc5c8d5f70e3da1be31d889c9d2a521ecce9c66e67b9f8a"
       },
       {
+        "path": "Periods/Tasks/SelfAlias.md",
+        "sha256": "e2b9dc20c3871ced4c753be79f72a6af8b49ad911c5eda81360d661b61ae91c4"
+      },
+      {
+        "path": "Periods/Tasks/SelfBrackets.md",
+        "sha256": "7749ed3f0989f94971ce773bf2de1dfbb59ec0ef31face35e836d958b0c6afc3"
+      },
+      {
+        "path": "Periods/Tasks/SelfEmpty.md",
+        "sha256": "50011c3db1d4571767b334acf30848b292494b0e66bf5bef18b2c17f3fec25ce"
+      },
+      {
+        "path": "Periods/Tasks/SelfHeading.md",
+        "sha256": "e03222b47750799d3f5c710d982975442ac27e1a0623b61768e8963b394a70ea"
+      },
+      {
+        "path": "Periods/Tasks/SelfNull.md",
+        "sha256": "7f60529b02d51149a11b94004e2ee3581c479ca781dc07e31f56a51ab1b8c888"
+      },
+      {
+        "path": "Periods/Tasks/SelfPlainHeading.md",
+        "sha256": "f3317ecfd5bf3c678c1ff530b0334951312c80d3de64b8c72ff0d32004de1a69"
+      },
+      {
         "path": "Periods/Tasks/Unresolved.md",
         "sha256": "d95c686d374935a1b1bf9da31bb55dc9a94fbba9753aaa3adeb2963aa240f2ce"
       },
       {
         "path": "Periods/Views.base",
-        "sha256": "66b0bce1dcabf6a64218022a9be31e2769179a5b471bd99d77a2c3779229a219"
+        "sha256": "b32c8598d47d73fc85d297060c5571091fb35db8d0fa9d496eacd2d2dc342db3"
       },
       {
         "path": "Reminders/People/Person.md",
@@ -1522,12 +1546,12 @@
         "view=This Week",
         "format=json"
       ],
-      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\",\n    \"file base name\": \"SelfAlias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\",\n    \"file base name\": \"SelfBrackets\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\",\n    \"file base name\": \"SelfHeading\",\n    \"sprint\": null\n  }\n]\n",
       "stderr": "",
       "exitCode": 0,
       "attempts": [
         {
-          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\",\n    \"file base name\": \"SelfAlias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\",\n    \"file base name\": \"SelfBrackets\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\",\n    \"file base name\": \"SelfHeading\",\n    \"sprint\": null\n  }\n]\n",
           "stderr": "",
           "exitCode": 0
         }
@@ -1579,12 +1603,12 @@
         "view=Filtered list",
         "format=json"
       ],
-      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Old.md\",\n    \"file name\": \"Old\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Unresolved.md\",\n    \"file name\": \"Unresolved\"\n  }\n]\n",
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Old.md\",\n    \"file name\": \"Old\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfEmpty.md\",\n    \"file name\": \"SelfEmpty\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfPlainHeading.md\",\n    \"file name\": \"SelfPlainHeading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Unresolved.md\",\n    \"file name\": \"Unresolved\"\n  }\n]\n",
       "stderr": "",
       "exitCode": 0,
       "attempts": [
         {
-          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Old.md\",\n    \"file name\": \"Old\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Unresolved.md\",\n    \"file name\": \"Unresolved\"\n  }\n]\n",
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Old.md\",\n    \"file name\": \"Old\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfEmpty.md\",\n    \"file name\": \"SelfEmpty\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfPlainHeading.md\",\n    \"file name\": \"SelfPlainHeading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Unresolved.md\",\n    \"file name\": \"Unresolved\"\n  }\n]\n",
           "stderr": "",
           "exitCode": 0
         }
@@ -1598,12 +1622,12 @@
         "view=Last day",
         "format=json"
       ],
-      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  }\n]\n",
       "stderr": "",
       "exitCode": 0,
       "attempts": [
         {
-          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  }\n]\n",
           "stderr": "",
           "exitCode": 0
         }
@@ -1636,12 +1660,12 @@
         "view=Bracket property",
         "format=json"
       ],
-      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  }\n]\n",
       "stderr": "",
       "exitCode": 0,
       "attempts": [
         {
-          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  }\n]\n",
           "stderr": "",
           "exitCode": 0
         }
@@ -1656,17 +1680,36 @@
         "format=json"
       ],
       "liveClock": true,
-      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\",\n    \"file base name\": \"SelfAlias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\",\n    \"file base name\": \"SelfBrackets\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\",\n    \"file base name\": \"SelfHeading\",\n    \"sprint\": null\n  }\n]\n",
       "stderr": "",
       "exitCode": 0,
       "attempts": [
         {
-          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\",\n    \"file base name\": \"SelfAlias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\",\n    \"file base name\": \"SelfBrackets\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\",\n    \"file base name\": \"SelfHeading\",\n    \"sprint\": null\n  }\n]\n",
           "stderr": "",
           "exitCode": 0
         }
       ],
       "clockDate": "2026-09-07"
+    },
+    {
+      "name": "periods-Self references",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=Self references",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
     }
   ]
 }

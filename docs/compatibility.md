@@ -9,7 +9,7 @@ characterization must use a disposable synthetic vault, never a personal vault.
 ## Verified reference
 
 The checked-in [recording](../tests/fixtures/native-results.json) contains
-79 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
+80 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
 The recorder verified that the disposable vault exactly matched committed
 fixtures before and after capture. Outputs are unmodified, with command arguments,
 exit status, stderr, retry attempts, fixture hashes, and capture provenance.

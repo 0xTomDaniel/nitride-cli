@@ -706,5 +706,14 @@
       "format=json"
     ],
     "liveClock": true
+  },
+  {
+    "name": "periods-Self references",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Self references",
+      "format=json"
+    ]
   }
 ]

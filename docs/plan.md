@@ -3,7 +3,7 @@
 Completed in the Bases implementation branch:
 
 1. Public MIT repository, product contract, source and evidence rules.
-2. Disposable-vault native characterization: 79 cases; 102-command inventory.
+2. Disposable-vault native characterization: 80 cases; 102-command inventory.
 3. TypeScript CLI: discovery, read-only queries, explicit view listing,
    dates/timezones, output formats, and explicit failure behavior.
 4. Bundled executable and portable skill, with source maps and dependency notices.

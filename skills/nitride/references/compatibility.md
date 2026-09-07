@@ -37,6 +37,8 @@ inputs, including null, become one-item lists; list inputs retain their items.
 Wikilinks may have aliases/headings, explicit relative paths, or unique path
 suffixes. Missing targets yield null metadata. Ambiguous shorthand links fail;
 use a qualified vault-relative link rather than depending on desktop tie-breaking.
+Empty/plain references yield missing metadata; only true self-wikilinks such as
+`[[]]`, `[[|Alias]]` or `[[#Heading]]` resolve to the current note.
 Links cannot leave the visible vault. All visible Markdown is parsed before
 filter evaluation, so malformed linked metadata fails rather than disappearing.
 
