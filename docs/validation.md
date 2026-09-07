@@ -69,3 +69,31 @@ with a host-mounted temporary runtime. No active service settings were changed.
 
 GitHub CI is configured for Node 22 on Linux and macOS; its actual run status
 is reported separately from these local and Debian results.
+
+## Linked-period increment
+
+The public CLI now evaluates the list/filter/linked-property chain required by
+Exo's This Week and Current Sprint views, plus file.basename. Eight additional
+native cases cover those views, live and fixed dates, first/last/after-period
+boundaries, scalar/list/missing/null inputs, aliases, headings, relative/suffix
+links, unresolved targets and bracket property access. Source fixtures contain
+only synthetic notes. Native capture revealed that list(null) contains one null
+item; the failing replay preceded its correction.
+
+All 102 public CLI tests and 79 isolated package cases passed locally, including
+explicit ambiguity and traversal/nested-value failure checks. Link ambiguity
+fails deliberately instead of claiming native tie-breaking parity. The vault
+metadata index is rebuilt for every query and is not persisted. The expression
+interpreter still never executes Base input as JavaScript.
+
+The skill eval catalog now describes supported period queries separately from
+unsupported formulas; these prompt updates are not fresh model-eval evidence.
+
+## Self-reference review repair
+
+A native-recorded regression distinguishes empty/plain references from actual
+self-wikilinks. Six synthetic tasks carry their own period dates: empty text,
+plain heading text and null must not acquire membership from those dates;
+`[[]]`, `[[|Alias]]` and `[[#Heading]]` may resolve to the current note. The
+public CLI replay failed before the resolver preserved the original wikilink
+form. This expands conformance to 80 native cases and 103 public CLI tests.

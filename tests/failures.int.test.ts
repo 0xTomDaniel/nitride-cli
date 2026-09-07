@@ -42,6 +42,37 @@ it("rejects unsupported functions in an empty selection", () =>
     writeFileSync(join(root, "Test.base"), base('file.hasLink("Anything")'));
     fails(root, ["base:query", "path=Test.base"], /Unsupported/);
   }));
+it("rejects ambiguous linked notes instead of selecting an arbitrary period", () =>
+  scenario((root) => {
+    mkdirSync(join(root, "Other"));
+    writeFileSync(
+      join(root, "Period.md"),
+      "---\nweek_start: 2026-09-07\n---\n",
+    );
+    writeFileSync(
+      join(root, "Other/Period.md"),
+      "---\nweek_start: 2026-08-01\n---\n",
+    );
+    writeFileSync(
+      join(root, "Test.base"),
+      base('file("[[Period]]").properties.week_start != null'),
+    );
+    fails(root, ["base:query", "path=Test.base"], /Ambiguous linked-file/);
+  }));
+it("rejects traversal and nested list values in linked-period expressions", () =>
+  scenario((root) => {
+    writeFileSync(
+      join(root, "Test.base"),
+      base('file("../../Outside").properties.week_start != null'),
+    );
+    fails(root, ["base:query", "path=Test.base"], /leaves vault/);
+    writeFileSync(join(root, "A.md"), '---\nweek: [["nested"]]\n---\n');
+    writeFileSync(
+      join(root, "Test.base"),
+      base("list(week).filter(value != null).length > 0"),
+    );
+    fails(root, ["base:query", "path=Test.base"], /Unsupported list/);
+  }));
 it.each([
   'true || file.hasLink("Anything")',
   { or: ["true", 'file.hasLink("Anything")'] },

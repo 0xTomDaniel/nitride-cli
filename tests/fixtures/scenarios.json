@@ -633,5 +633,87 @@
       "view=Explicit text DESC",
       "format=json"
     ]
+  },
+  {
+    "name": "periods-This Week",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=This Week",
+      "format=json"
+    ]
+  },
+  {
+    "name": "periods-Current Sprint",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Current Sprint",
+      "format=json"
+    ]
+  },
+  {
+    "name": "periods-Missing list",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Missing list",
+      "format=json"
+    ]
+  },
+  {
+    "name": "periods-Filtered list",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Filtered list",
+      "format=json"
+    ]
+  },
+  {
+    "name": "periods-Last day",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Last day",
+      "format=json"
+    ]
+  },
+  {
+    "name": "periods-After period",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=After period",
+      "format=json"
+    ]
+  },
+  {
+    "name": "periods-Bracket property",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Bracket property",
+      "format=json"
+    ]
+  },
+  {
+    "name": "periods-Live This Week",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Live This Week",
+      "format=json"
+    ],
+    "liveClock": true
+  },
+  {
+    "name": "periods-Self references",
+    "args": [
+      "base:query",
+      "path=Periods/Views.base",
+      "view=Self references",
+      "format=json"
+    ]
   }
 ]
