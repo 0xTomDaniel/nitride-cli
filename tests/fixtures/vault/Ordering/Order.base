@@ -1,0 +1,1 @@
+{"filters": "file.ext == \"md\" && file.folder == \"Ordering\"", "views": [{"type": "table", "name": "Names", "order": ["file.name"]}]}

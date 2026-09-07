@@ -1,0 +1,158 @@
+{
+  "filters": "file.path.startsWith(\"Edges/\")",
+  "views": [
+    {
+      "type": "table",
+      "name": "Scalars",
+      "order": [
+        "file.name",
+        "score",
+        "enabled",
+        "text"
+      ],
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "table",
+      "name": "Lists",
+      "order": [
+        "file.name",
+        "related",
+        "tags"
+      ],
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "table",
+      "name": "Named properties",
+      "filters": "note[\"odd key\"] == \"yes\" && file.name.contains(\"One\")",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Mixed comparison",
+      "filters": "score < \"3\"",
+      "order": [
+        "file.name",
+        "score"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty results",
+      "filters": "status == \"no such status\"",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "File fields",
+      "order": [
+        "file.name",
+        "file.path",
+        "file.ext",
+        "file.folder"
+      ],
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "table",
+      "name": "Literal due",
+      "filters": "review_on && review_on <= date(\"2026-09-07\") && status != \"Reviewed\"",
+      "order": [
+        "file.name",
+        "review_on"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Negative",
+      "filters": "score < -0",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Methods",
+      "filters": "file.path.startsWith(\"Edges/\") && file.path.endsWith(\"One.md\")",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Name extension",
+      "filters": "file.name == \"One.md\"",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Name stem",
+      "filters": "file.name == \"One\"",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Zero limit",
+      "limit": 0,
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "cards",
+      "name": "Cards",
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "list",
+      "name": "List view",
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "table",
+      "name": "Empty columns",
+      "order": [],
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "table",
+      "name": "Null sort",
+      "sort": [
+        {
+          "property": "score",
+          "direction": "DESC"
+        }
+      ],
+      "order": [
+        "file.name",
+        "score"
+      ],
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "table",
+      "name": "Prefixed columns",
+      "order": [
+        "file.name",
+        "note.status"
+      ],
+      "filters": "file.ext == \"md\""
+    },
+    {
+      "type": "table",
+      "name": "Root folder",
+      "filters": "file.folder == \"\"",
+      "order": [
+        "file.name",
+        "file.folder"
+      ]
+    }
+  ]
+}

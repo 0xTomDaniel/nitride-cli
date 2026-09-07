@@ -16,6 +16,9 @@ Read `docs/spec.md` and `docs/compatibility.md` before changing CLI behavior.
   a competing task store or hard-code one user's workflow.
 - Document intentional differences, supported reference versions, and test limits.
 - Keep this file canonical; `CLAUDE.md` is a symlink to it.
-- No CLI test/build suite exists at initialization. Add meaningful public-command
-  tests and type/build checks with the first executable slice; run those checks
-  before handing off executable changes. For documentation, check links and diff.
+- Run `npm run check` before handing off changes. It checks format/types, builds,
+  tests the public command Interface, and verifies an isolated installed skill.
+- Commit regenerated skill executable/source map and dependency notices with source
+  changes. `skills/nitride/scripts/nitride.mjs` is generated; edit TypeScript source.
+- Run native capture only through the documented disposable-vault procedure.
+  Review reference-output changes independently; never adjust recordings to pass.

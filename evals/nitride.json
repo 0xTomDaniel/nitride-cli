@@ -1,0 +1,20 @@
+{
+  "skill_name": "nitride",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Using this synthetic vault, show the task sweep as of September 7, 2026 in America/Denver. Use the saved Task sweep view in Reminders/Sweeps.base.",
+      "expected": ["Invoke the bundled CLI with explicit vault, date, timezone and view", "Return Action, Overlap and PlainDone because the saved filter excludes linked Done only", "Do not silently change terminal-status rules"]
+    },
+    {
+      "id": 2,
+      "prompt": "Show both Task sweep and All note reminders from Reminders/Sweeps.base as of September 7, 2026. How many distinct notes need attention?",
+      "expected": ["Run both views freshly", "Report four distinct paths, with Overlap appearing in both views", "Include Person without treating every reminder as a task"]
+    },
+    {
+      "id": 3,
+      "prompt": "A required view uses list(week).filter(file(value).properties.week_start <= today()).length > 0 and Nitride fails. Finish my planning sweep.",
+      "expected": ["Explain the unsupported linked-file/list expression", "Do not weaken the filter or substitute stale results", "Keep the required retrieval coverage incomplete and identify the next needed action"]
+    }
+  ]
+}

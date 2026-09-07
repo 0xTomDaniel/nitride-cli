@@ -2,32 +2,71 @@
 
 An independent, Obsidian-compatible headless CLI for local Markdown vaults.
 
-Nitride will let agents execute saved Obsidian Base queries on macOS and
-headless Linux without running the Obsidian desktop application. Vault notes
-and `.base` files remain the source of truth.
+Nitride executes a read-only subset of saved Base queries on macOS and Linux
+without the Obsidian desktop app. Vault notes and `.base` definitions remain
+the source of truth.
 
-## Status
+## Run
 
-Repository initialized; CLI implementation and installable skill are pending.
-There is no published npm package or working Nitride command yet.
+Requires **Node.js 22+**. The checked-in executable bundles its dependencies:
 
-The first implementation slice is Base discovery and read-only queries:
-`bases`, `base:query`, and an explicitly designed headless equivalent of
-`base:views`. `base:create` is deferred. Compatibility means a documented,
-versioned subset, not a claim of complete Obsidian parity.
+```sh
+node skills/nitride/scripts/nitride.mjs --help
+node skills/nitride/scripts/nitride.mjs --vault-path /path/to/vault bases
+node skills/nitride/scripts/nitride.mjs --vault-path /path/to/vault base:views path="Queries/Tasks.base"
+node skills/nitride/scripts/nitride.mjs --vault-path /path/to/vault --timezone America/Denver base:query path="Queries/Tasks.base" view="Due Today" format=json
+```
 
-## Direction
+Choose your own timezone; the default is UTC. `--date YYYY-MM-DD` sets an explicit
+as-of date for reproducible queries. JSON cells preserve native rendered values
+(strings/nulls). CSV, TSV, Markdown, and path-only output are also supported.
 
-- TypeScript source, bundled JavaScript, Node.js runtime.
-- CLI-only executable surface plus a portable Agent Skills folder.
-- Planned skill installation through `npx skills`; runtime dependencies must
-  be bundled so using the installed CLI needs no build or package download.
-- Independent implementation from official documentation and black-box
-  observations of the official CLI. Do not inspect proprietary packaged code.
-- Synthetic, disposable vaults for native compatibility tests.
+`base:views` accepts explicit file selection instead of requiring UI state.
+Unknown functions, unsupported configuration, invalid metadata, and incomplete
+reads fail with exit 1 and stderr; they never become successful empty results.
+See the [supported contract](skills/nitride/references/compatibility.md).
 
-See the [product contract](docs/spec.md), [compatibility plan](docs/compatibility.md),
-and [implementation sequence](docs/plan.md).
+## Install the skill
 
-Nitride is an independent project and is not affiliated with Obsidian.
-Licensed under MIT.
+From a checkout containing the implementation:
+
+```sh
+npx skills@latest add . --skill nitride
+```
+
+After this implementation is merged into the repository's default branch:
+
+```sh
+npx skills@latest add EmberAGI/nitride-cli --skill nitride
+```
+
+The skill can also be installed by copying `skills/nitride` into your agent's
+skill directory. It includes the same bundled executable. Installing the skill
+does not provision Node in a separate remote agent environment.
+
+The npm package structure uses `@emberagi/nitride-cli` and the `nitride` binary.
+`npm pack` creates an installable tarball; the package is currently private in
+its manifest to prevent accidental registry publication. No npm release is
+claimed or required to run the bundled skill.
+
+## Develop and verify
+
+```sh
+npm ci --ignore-scripts
+npm run check
+```
+
+The gate checks formatting and types, builds the executable, runs public CLI
+tests, and exercises a copied skill outside the checkout with no `node_modules`.
+Runtime dependencies are bundled from development dependencies. Commit updated
+bundle/source map and third-party notices with source changes; CI checks drift.
+
+- [Compatibility evidence and native capture](docs/compatibility.md)
+- [Official command inventory](docs/command-inventory.md)
+- [Product contract](docs/spec.md)
+- [Implementation status and follow-ups](docs/plan.md)
+- [Validation report](docs/validation.md)
+
+This is a tested Base subset, not complete Obsidian parity. Mutations, formulas,
+linked-file traversal, desktop automation, plugins, and sync are not implemented.
+Nitride is independent and is not affiliated with Obsidian. Licensed under MIT.

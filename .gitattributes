@@ -1,0 +1,3 @@
+# Dependency string literals in generated bundles can contain meaningful spaces.
+skills/nitride/scripts/nitride.mjs linguist-generated=true whitespace=-blank-at-eol
+skills/nitride/scripts/nitride.mjs.map linguist-generated=true

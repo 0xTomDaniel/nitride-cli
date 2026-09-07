@@ -1,0 +1,968 @@
+{
+  "provenance": {
+    "timezone": "America/Denver",
+    "provider": "Official Obsidian CLI",
+    "version": "1.13.7 (installer 1.12.4)",
+    "capturedAt": "2026-09-07T19:59:46.311Z",
+    "platform": "darwin",
+    "disposableVault": true,
+    "normalization": "None",
+    "fixtures": [
+      {
+        "path": "Edges/Cases.base",
+        "sha256": "b593090be600d5daa1f9ab6afd556898dc494e39fb68ec8d2332b2517979e68c"
+      },
+      {
+        "path": "Edges/Four.md",
+        "sha256": "8e368f0d905b26d97bc5ba1639a43d8cd66a3ba2d26264069c3a3a1e72573565"
+      },
+      {
+        "path": "Edges/One.md",
+        "sha256": "a38cf7ae0401bd81fa60ee260711009f478e595148faa15f71dd624560646e54"
+      },
+      {
+        "path": "Edges/Three.md",
+        "sha256": "fd524989f4f93d18ac7e295c6cea51ffe119a6553a974f271dc58dc9484b0af0"
+      },
+      {
+        "path": "Edges/Two.md",
+        "sha256": "ed32a9fa37e9e33495b9ba7ed67e82a6e0d47942cff67aa60135fc165013a61c"
+      },
+      {
+        "path": "Fixture/Alpha.md",
+        "sha256": "9452405e85a3125ce9af130a4b11e254dda186046f71a0fed1f6d4b9de752bc9"
+      },
+      {
+        "path": "Fixture/Beta.md",
+        "sha256": "b8578bb39eeb1d747e510589af060a73a78b3b3bbe5d003fe3c91d6d38ead4fd"
+      },
+      {
+        "path": "Fixture/Blank.md",
+        "sha256": "2a6798affdf14f494ac59607596f0a5b053284559b9c01817fbf9338ec212d46"
+      },
+      {
+        "path": "Fixture/Cases.base",
+        "sha256": "6d1dae59509cda394a8bf231cf598fcda199ba86da428e67822a73c2f92030cc"
+      },
+      {
+        "path": "Fixture/Gamma.md",
+        "sha256": "f0ffe362356ddb4c3689d79615f42859659182d6bf4835fad0dddfa03ebc0d44"
+      },
+      {
+        "path": "Fixture/Missing.md",
+        "sha256": "8d4f368e25adb99d3dec525877808b49f65c7e8a95792a6e59d86d74e09d2563"
+      },
+      {
+        "path": "Ordering/Å.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/é.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/note1.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/Note10.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/Note2.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/Order.base",
+        "sha256": "a461e22e5dea0dcede00a40f2f7c9ceedaff8fc1a66c0dc2e7c3225f6c02f4b6"
+      },
+      {
+        "path": "Ordering/Z.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Reminders/People/Person.md",
+        "sha256": "90c66aaff97adb0299260634cb051e17f2773ebd85eaefa0f46c4feb4b3871ac"
+      },
+      {
+        "path": "Reminders/People/Reviewed.md",
+        "sha256": "abb431bea0bf15f7d28676983d470ff0891f012cdd0dd8d6ea962500f50e3ead"
+      },
+      {
+        "path": "Reminders/Sweeps.base",
+        "sha256": "a453e0034d8f52e448d58826f2b8480f2c3a85948ec0e1236dd4f9b384527bae"
+      },
+      {
+        "path": "Reminders/Tasks/Action.md",
+        "sha256": "65ada43fbc2ecd3a5cc0fdb9bb414bc0b5b1cb673f0426496714e21e95a46072"
+      },
+      {
+        "path": "Reminders/Tasks/LinkedDone.md",
+        "sha256": "9c3810b1a1f6bc00828f68f88af055d23d4841c0f500db08ec3155f3167c3e70"
+      },
+      {
+        "path": "Reminders/Tasks/Overlap.md",
+        "sha256": "a8111fe7121393d8f265b45dbf6320612d68906641393f89111a8e2463335659"
+      },
+      {
+        "path": "Reminders/Tasks/PlainDone.md",
+        "sha256": "c74a1fe6aa952960b8a1c8a7241a1a173f459f4ab366457cc3334b7e89d04da5"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "base-1",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=All",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"status\": \"Todo\",\n    \"sample_date\": \"2026-09-07\",\n    \"score\": \"2\"\n  },\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\",\n    \"status\": \"[[Done]]\",\n    \"sample_date\": \"2026-09-06\",\n    \"score\": \"10\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\",\n    \"status\": null,\n    \"sample_date\": null,\n    \"score\": null\n  },\n  {\n    \"path\": \"Fixture/Gamma.md\",\n    \"file name\": \"Gamma\",\n    \"status\": \"Waiting\",\n    \"sample_date\": \"2026-09-08\",\n    \"score\": null\n  },\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\",\n    \"status\": null,\n    \"sample_date\": null,\n    \"score\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"status\": \"Todo\",\n    \"sample_date\": \"2026-09-07\",\n    \"score\": \"2\"\n  },\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\",\n    \"status\": \"[[Done]]\",\n    \"sample_date\": \"2026-09-06\",\n    \"score\": \"10\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\",\n    \"status\": null,\n    \"sample_date\": null,\n    \"score\": null\n  },\n  {\n    \"path\": \"Fixture/Gamma.md\",\n    \"file name\": \"Gamma\",\n    \"status\": \"Waiting\",\n    \"sample_date\": \"2026-09-08\",\n    \"score\": null\n  },\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\",\n    \"status\": null,\n    \"sample_date\": null,\n    \"score\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-2",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=All",
+        "format=csv"
+      ],
+      "stdout": "file name,status,sample_date,score\nAlpha,Todo,2026-09-07,2\nBeta,[[Done]],2026-09-06,10\nBlank,,,\nGamma,Waiting,2026-09-08,\nMissing,,,\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "file name,status,sample_date,score\nAlpha,Todo,2026-09-07,2\nBeta,[[Done]],2026-09-06,10\nBlank,,,\nGamma,Waiting,2026-09-08,\nMissing,,,\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-3",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=All",
+        "format=tsv"
+      ],
+      "stdout": "file name\tstatus\tsample_date\tscore\nAlpha\tTodo\t2026-09-07\t2\nBeta\t[[Done]]\t2026-09-06\t10\nBlank\t\t\t\nGamma\tWaiting\t2026-09-08\t\nMissing\t\t\t\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "file name\tstatus\tsample_date\tscore\nAlpha\tTodo\t2026-09-07\t2\nBeta\t[[Done]]\t2026-09-06\t10\nBlank\t\t\t\nGamma\tWaiting\t2026-09-08\t\nMissing\t\t\t\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-4",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=All",
+        "format=md"
+      ],
+      "stdout": "| file name |  status  | sample_date | score |\n| --------- | -------- | ----------- | ----- |\n|   Alpha   |   Todo   | 2026-09-07  |   2   |\n|   Beta    | [[Done]] | 2026-09-06  |  10   |\n|   Blank   |          |             |       |\n|   Gamma   | Waiting  | 2026-09-08  |       |\n|  Missing  |          |             |       |\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "| file name |  status  | sample_date | score |\n| --------- | -------- | ----------- | ----- |\n|   Alpha   |   Todo   | 2026-09-07  |   2   |\n|   Beta    | [[Done]] | 2026-09-06  |  10   |\n|   Blank   |          |             |       |\n|   Gamma   | Waiting  | 2026-09-08  |       |\n|  Missing  |          |             |       |\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-5",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=All",
+        "format=paths"
+      ],
+      "stdout": "Fixture/Alpha.md\nFixture/Beta.md\nFixture/Blank.md\nFixture/Gamma.md\nFixture/Missing.md\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "Fixture/Alpha.md\nFixture/Beta.md\nFixture/Blank.md\nFixture/Gamma.md\nFixture/Missing.md\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-6",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Due",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"sample_date\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\",\n    \"sample_date\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"sample_date\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\",\n    \"sample_date\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-7",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Truthy",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  },\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\"\n  },\n  {\n    \"path\": \"Fixture/Gamma.md\",\n    \"file name\": \"Gamma\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  },\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\"\n  },\n  {\n    \"path\": \"Fixture/Gamma.md\",\n    \"file name\": \"Gamma\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-8",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Missing comparison",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"score\": \"2\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"score\": \"2\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-9",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Names",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  },\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\"\n  },\n  {\n    \"path\": \"Fixture/Gamma.md\",\n    \"file name\": \"Gamma\"\n  },\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  },\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\"\n  },\n  {\n    \"path\": \"Fixture/Gamma.md\",\n    \"file name\": \"Gamma\"\n  },\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-10",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Sorted",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\",\n    \"score\": \"10\"\n  },\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"score\": \"2\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Beta.md\",\n    \"file name\": \"Beta\",\n    \"score\": \"10\"\n  },\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\",\n    \"score\": \"2\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-11",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Empty",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-12",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Null",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-13",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Numeric string",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-14",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Numeric",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-15",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Boolean",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-16",
+      "args": [
+        "base:query",
+        "path=Fixture/Cases.base",
+        "view=Not",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\"\n  },\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Fixture/Alpha.md\",\n    \"file name\": \"Alpha\"\n  },\n  {\n    \"path\": \"Fixture/Blank.md\",\n    \"file name\": \"Blank\"\n  },\n  {\n    \"path\": \"Fixture/Missing.md\",\n    \"file name\": \"Missing\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-17",
+      "args": [
+        "bases"
+      ],
+      "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nReminders/Sweeps.base\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nReminders/Sweeps.base\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "base-18",
+      "args": [
+        "base:views"
+      ],
+      "activeFile": "Fixture/Cases.base",
+      "stdout": "All\ttable\nDue\ttable\nTruthy\ttable\nMissing comparison\ttable\nNames\ttable\nSorted\ttable\nEmpty\ttable\nNull\ttable\nNumeric string\ttable\nNumeric\ttable\nBoolean\ttable\nNot\ttable\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "All\ttable\nDue\ttable\nTruthy\ttable\nMissing comparison\ttable\nNames\ttable\nSorted\ttable\nEmpty\ttable\nNull\ttable\nNumeric string\ttable\nNumeric\ttable\nBoolean\ttable\nNot\ttable\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Scalars-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalars",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"score\": null,\n    \"enabled\": null,\n    \"text\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"score\": \"2\",\n    \"enabled\": \"true\",\n    \"text\": \"hello, \\\"vault\\\"\\nnext | cell\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"score\": \"-1\",\n    \"enabled\": \"true\",\n    \"text\": null\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"score\": \"10\",\n    \"enabled\": \"false\",\n    \"text\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"score\": null,\n    \"enabled\": null,\n    \"text\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"score\": \"2\",\n    \"enabled\": \"true\",\n    \"text\": \"hello, \\\"vault\\\"\\nnext | cell\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"score\": \"-1\",\n    \"enabled\": \"true\",\n    \"text\": null\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"score\": \"10\",\n    \"enabled\": \"false\",\n    \"text\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Scalars-csv",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalars",
+        "format=csv"
+      ],
+      "stdout": "file name,score,enabled,text\nFour,,,\nOne,2,true,\"hello, \"\"vault\"\"\nnext | cell\"\nThree,-1,true,\nTwo,10,false,\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "file name,score,enabled,text\nFour,,,\nOne,2,true,\"hello, \"\"vault\"\"\nnext | cell\"\nThree,-1,true,\nTwo,10,false,\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Scalars-tsv",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalars",
+        "format=tsv"
+      ],
+      "stdout": "file name\tscore\tenabled\ttext\nFour\t\t\t\nOne\t2\ttrue\t\"hello, \"\"vault\"\"\nnext | cell\"\nThree\t-1\ttrue\t\nTwo\t10\tfalse\t\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "file name\tscore\tenabled\ttext\nFour\t\t\t\nOne\t2\ttrue\t\"hello, \"\"vault\"\"\nnext | cell\"\nThree\t-1\ttrue\t\nTwo\t10\tfalse\t\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Scalars-md",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalars",
+        "format=md"
+      ],
+      "stdout": "| file name | score | enabled |            text             |\n| --------- | ----- | ------- | --------------------------- |\n|   Four    |       |         |                             |\n|    One    |   2   |  true   | hello, \"vault\"\nnext \\| cell |\n|   Three   |  -1   |  true   |                             |\n|    Two    |  10   |  false  |                             |\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "| file name | score | enabled |            text             |\n| --------- | ----- | ------- | --------------------------- |\n|   Four    |       |         |                             |\n|    One    |   2   |  true   | hello, \"vault\"\nnext \\| cell |\n|   Three   |  -1   |  true   |                             |\n|    Two    |  10   |  false  |                             |\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Lists-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Lists",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"related\": null,\n    \"tags\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"related\": \"[[Alpha]], [[Beta]]\",\n    \"tags\": \"#work, #home\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"related\": null,\n    \"tags\": null\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"related\": null,\n    \"tags\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"related\": null,\n    \"tags\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"related\": \"[[Alpha]], [[Beta]]\",\n    \"tags\": \"#work, #home\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"related\": null,\n    \"tags\": null\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"related\": null,\n    \"tags\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Lists-csv",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Lists",
+        "format=csv"
+      ],
+      "stdout": "file name,related,tags\nFour,,\nOne,\"[[Alpha]], [[Beta]]\",\"#work, #home\"\nThree,,\nTwo,,\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "file name,related,tags\nFour,,\nOne,\"[[Alpha]], [[Beta]]\",\"#work, #home\"\nThree,,\nTwo,,\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Lists-tsv",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Lists",
+        "format=tsv"
+      ],
+      "stdout": "file name\trelated\ttags\nFour\t\t\nOne\t[[Alpha]], [[Beta]]\t#work, #home\nThree\t\t\nTwo\t\t\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "file name\trelated\ttags\nFour\t\t\nOne\t[[Alpha]], [[Beta]]\t#work, #home\nThree\t\t\nTwo\t\t\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Lists-md",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Lists",
+        "format=md"
+      ],
+      "stdout": "| file name |       related       |     tags     |\n| --------- | ------------------- | ------------ |\n|   Four    |                     |              |\n|    One    | [[Alpha]], [[Beta]] | #work, #home |\n|   Three   |                     |              |\n|    Two    |                     |              |\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "| file name |       related       |     tags     |\n| --------- | ------------------- | ------------ |\n|   Four    |                     |              |\n|    One    | [[Alpha]], [[Beta]] | #work, #home |\n|   Three   |                     |              |\n|    Two    |                     |              |\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Named properties-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Named properties",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Mixed comparison-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Mixed comparison",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"score\": \"2\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"score\": \"-1\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"score\": \"2\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"score\": \"-1\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Empty results-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty results",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-File fields-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=File fields",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"file path\": \"Edges/Four.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"file path\": \"Edges/One.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"file path\": \"Edges/Three.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"file path\": \"Edges/Two.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"file path\": \"Edges/Four.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"file path\": \"Edges/One.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"file path\": \"Edges/Three.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"file path\": \"Edges/Two.md\",\n    \"file extension\": \"md\",\n    \"folder\": \"Edges\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Literal due-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Literal due",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Negative-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Negative",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "edges-Methods-json",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Methods",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "reminders-Task sweep",
+      "args": [
+        "base:query",
+        "path=Reminders/Sweeps.base",
+        "view=Task sweep",
+        "format=json"
+      ],
+      "liveClock": true,
+      "stdout": "[\n  {\n    \"path\": \"Reminders/Tasks/Action.md\",\n    \"file name\": \"Action\",\n    \"due\": \"2026-09-07\",\n    \"review_on\": null,\n    \"status\": \"[[Todo]]\",\n    \"related\": \"[[Person]]\"\n  },\n  {\n    \"path\": \"Reminders/Tasks/Overlap.md\",\n    \"file name\": \"Overlap\",\n    \"due\": \"2026-09-07\",\n    \"review_on\": \"2026-09-06\",\n    \"status\": \"Waiting\",\n    \"related\": null\n  },\n  {\n    \"path\": \"Reminders/Tasks/PlainDone.md\",\n    \"file name\": \"PlainDone\",\n    \"due\": \"2026-09-06\",\n    \"review_on\": \"2026-09-06\",\n    \"status\": \"Done\",\n    \"related\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Reminders/Tasks/Action.md\",\n    \"file name\": \"Action\",\n    \"due\": \"2026-09-07\",\n    \"review_on\": null,\n    \"status\": \"[[Todo]]\",\n    \"related\": \"[[Person]]\"\n  },\n  {\n    \"path\": \"Reminders/Tasks/Overlap.md\",\n    \"file name\": \"Overlap\",\n    \"due\": \"2026-09-07\",\n    \"review_on\": \"2026-09-06\",\n    \"status\": \"Waiting\",\n    \"related\": null\n  },\n  {\n    \"path\": \"Reminders/Tasks/PlainDone.md\",\n    \"file name\": \"PlainDone\",\n    \"due\": \"2026-09-06\",\n    \"review_on\": \"2026-09-06\",\n    \"status\": \"Done\",\n    \"related\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ],
+      "clockDate": "2026-09-07"
+    },
+    {
+      "name": "reminders-All note reminders",
+      "args": [
+        "base:query",
+        "path=Reminders/Sweeps.base",
+        "view=All note reminders",
+        "format=json"
+      ],
+      "liveClock": true,
+      "stdout": "[\n  {\n    \"path\": \"Reminders/Tasks/Overlap.md\",\n    \"file name\": \"Overlap\",\n    \"review_on\": \"2026-09-06\",\n    \"status\": \"Waiting\"\n  },\n  {\n    \"path\": \"Reminders/People/Person.md\",\n    \"file name\": \"Person\",\n    \"review_on\": \"2026-09-07\",\n    \"status\": \"Active\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Reminders/Tasks/Overlap.md\",\n    \"file name\": \"Overlap\",\n    \"review_on\": \"2026-09-06\",\n    \"status\": \"Waiting\"\n  },\n  {\n    \"path\": \"Reminders/People/Person.md\",\n    \"file name\": \"Person\",\n    \"review_on\": \"2026-09-07\",\n    \"status\": \"Active\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ],
+      "clockDate": "2026-09-07"
+    },
+    {
+      "name": "natural-unicode-order",
+      "args": [
+        "base:query",
+        "path=Ordering/Order.base",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Ordering/Å.md\",\n    \"file name\": \"Å\"\n  },\n  {\n    \"path\": \"Ordering/é.md\",\n    \"file name\": \"é\"\n  },\n  {\n    \"path\": \"Ordering/note1.md\",\n    \"file name\": \"note1\"\n  },\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\"\n  },\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\"\n  },\n  {\n    \"path\": \"Ordering/Z.md\",\n    \"file name\": \"Z\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Ordering/Å.md\",\n    \"file name\": \"Å\"\n  },\n  {\n    \"path\": \"Ordering/é.md\",\n    \"file name\": \"é\"\n  },\n  {\n    \"path\": \"Ordering/note1.md\",\n    \"file name\": \"note1\"\n  },\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\"\n  },\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\"\n  },\n  {\n    \"path\": \"Ordering/Z.md\",\n    \"file name\": \"Z\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Name extension",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Name extension",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Name stem",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Name stem",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Zero limit",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Zero limit",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Cards",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "List view",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=List view",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty columns",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty columns",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\"\n  },\n  {\n    \"path\": \"Edges/One.md\"\n  },\n  {\n    \"path\": \"Edges/Three.md\"\n  },\n  {\n    \"path\": \"Edges/Two.md\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\"\n  },\n  {\n    \"path\": \"Edges/One.md\"\n  },\n  {\n    \"path\": \"Edges/Three.md\"\n  },\n  {\n    \"path\": \"Edges/Two.md\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Null sort",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Null sort",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"score\": \"10\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"score\": \"2\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"score\": \"-1\"\n  },\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"score\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"score\": \"10\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"score\": \"2\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"score\": \"-1\"\n  },\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"score\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Prefixed columns",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Prefixed columns",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"status\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"status\": \"Todo\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"status\": \"[[Done]]\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"status\": \"Reviewed\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"status\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"status\": \"Todo\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"status\": \"[[Done]]\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"status\": \"Reviewed\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Root folder",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Root folder",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    }
+  ]
+}
