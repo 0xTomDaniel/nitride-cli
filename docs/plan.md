@@ -1,26 +1,31 @@
-# Implementation sequence
+# Implementation status
 
-1. **Repository foundation (complete).** Establish ownership, license, scope,
-   source policy, evidence limitations, and the compatibility plan.
-2. **Isolated characterization.** Capture official help/version and Base command
-   behavior in a disposable synthetic vault. Build the broader classification
-   matrix without expanding the first executable slice.
-3. **TypeScript read-only slice.** Add package/build/typecheck/test tooling;
-   implement discovery and queries against the public-command conformance suite.
-   Resolve explicit vault, active-file, date/timezone, and failure contracts.
-   Reuse independently established behavior, not proprietary implementation.
-4. **Portable skill and packaging.** Bundle runtime dependencies in JavaScript,
-   document Node prerequisites, validate installed-folder execution and
-   `npx skills` installation. Choose npm/release naming before publication.
-5. **Integration and hardening.** Verify macOS/Debian behavior and required real
-   query syntax through synthetic equivalents. Then integrate into Exo separately.
-   Keep Exo-specific reminder-policy changes and continuity evals in Exo.
+Completed in the Bases implementation branch:
 
-The previous intake proposed a Nitride coordination parent plus a parity-spike
-child. This bootstrap does not create or route Linear issues. Before any Octo
-handoff, separately establish canonical repository metadata and verify bootstrap;
-repository creation alone does not establish orchestration readiness.
+1. Public MIT repository, product contract, source and evidence rules.
+2. Disposable-vault native characterization: 71 cases; 102-command inventory.
+3. TypeScript CLI: discovery, read-only queries, explicit view listing,
+   dates/timezones, output formats, and explicit failure behavior.
+4. Bundled executable and portable skill, with source maps and dependency notices.
+5. Public CLI regressions, isolated package testing, native provenance checks,
+   and macOS/Linux CI configuration.
 
-Completion means the supported contract and platform checks pass, not simply
-that plans or files were saved. Base mutations and additional command families
-need their own observed contract and implementation scope.
+See [validation](validation.md) for actual run results and their limits.
+
+Remaining separate work:
+
+- Merge/release the implementation; npm registry publication is not performed.
+- Integrate into Exo. Its current Voice container does not have Node on PATH;
+  runtime materialization is required before routing agents to Nitride there.
+- Resolve Exo-specific status-filter policy and required unsupported planning
+  views (for example linked-week traversal) in their owning scope. This CLI does
+  not by itself close all Exo Phase 2 retrieval requirements.
+- Characterize additional functions/formulas/view options and command families
+  before expanding the supported contract. Mutations remain deferred.
+- Independent model-based skill evaluation and live Voice acceptance are not
+  established by deterministic CLI tests.
+
+The earlier coordination-parent/parity-spike Linear proposal was not executed
+by this implementation. No issues or labels were created or routed. Octo
+handoff still requires separate canonical repository metadata and bootstrap
+verification; repository existence does not establish orchestration readiness.

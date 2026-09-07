@@ -1,0 +1,637 @@
+[
+  {
+    "name": "base-1",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=All",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-2",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=All",
+      "format=csv"
+    ]
+  },
+  {
+    "name": "base-3",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=All",
+      "format=tsv"
+    ]
+  },
+  {
+    "name": "base-4",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=All",
+      "format=md"
+    ]
+  },
+  {
+    "name": "base-5",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=All",
+      "format=paths"
+    ]
+  },
+  {
+    "name": "base-6",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Due",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-7",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Truthy",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-8",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Missing comparison",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-9",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Names",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-10",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Sorted",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-11",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Empty",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-12",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Null",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-13",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Numeric string",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-14",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Numeric",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-15",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Boolean",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-16",
+    "args": [
+      "base:query",
+      "path=Fixture/Cases.base",
+      "view=Not",
+      "format=json"
+    ]
+  },
+  {
+    "name": "base-17",
+    "args": [
+      "bases"
+    ]
+  },
+  {
+    "name": "base-18",
+    "args": [
+      "base:views"
+    ],
+    "activeFile": "Fixture/Cases.base"
+  },
+  {
+    "name": "edges-Scalars-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalars",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-Scalars-csv",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalars",
+      "format=csv"
+    ]
+  },
+  {
+    "name": "edges-Scalars-tsv",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalars",
+      "format=tsv"
+    ]
+  },
+  {
+    "name": "edges-Scalars-md",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalars",
+      "format=md"
+    ]
+  },
+  {
+    "name": "edges-Lists-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Lists",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-Lists-csv",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Lists",
+      "format=csv"
+    ]
+  },
+  {
+    "name": "edges-Lists-tsv",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Lists",
+      "format=tsv"
+    ]
+  },
+  {
+    "name": "edges-Lists-md",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Lists",
+      "format=md"
+    ]
+  },
+  {
+    "name": "edges-Named properties-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Named properties",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-Mixed comparison-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Mixed comparison",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-Empty results-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty results",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-File fields-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=File fields",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-Literal due-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Literal due",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-Negative-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Negative",
+      "format=json"
+    ]
+  },
+  {
+    "name": "edges-Methods-json",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Methods",
+      "format=json"
+    ]
+  },
+  {
+    "name": "reminders-Task sweep",
+    "args": [
+      "base:query",
+      "path=Reminders/Sweeps.base",
+      "view=Task sweep",
+      "format=json"
+    ],
+    "liveClock": true
+  },
+  {
+    "name": "reminders-All note reminders",
+    "args": [
+      "base:query",
+      "path=Reminders/Sweeps.base",
+      "view=All note reminders",
+      "format=json"
+    ],
+    "liveClock": true
+  },
+  {
+    "name": "natural-unicode-order",
+    "args": [
+      "base:query",
+      "path=Ordering/Order.base",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Name extension",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Name extension",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Name stem",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Name stem",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Zero limit",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Zero limit",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Cards",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Cards",
+      "format=json"
+    ]
+  },
+  {
+    "name": "List view",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=List view",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty columns",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty columns",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Null sort",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Null sort",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Prefixed columns",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Prefixed columns",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Root folder",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Root folder",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Explicit filename ASC",
+    "args": [
+      "base:query",
+      "path=Ordering/Order.base",
+      "view=Explicit filename ASC",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Explicit filename DESC",
+    "args": [
+      "base:query",
+      "path=Ordering/Order.base",
+      "view=Explicit filename DESC",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality == \"true\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality == \"true\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality != \"true\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality != \"true\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality == \"false\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality == \"false\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality != \"false\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality != \"false\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality == \"1\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality == \"1\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality != \"1\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality != \"1\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality == \"0\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality == \"0\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Boolean equality != \"0\"",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Boolean equality != \"0\"",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty group Or",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty group Or",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty group And",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty group And",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty group Not",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty group Not",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty group Nested or",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty group Nested or",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty group Nested and",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty group Nested and",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty group Nested not",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty group Nested not",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Empty group Nested empty",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Empty group Nested empty",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Scalar guard Expression or",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalar guard Expression or",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Scalar guard Expression and",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalar guard Expression and",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Scalar guard YAML or",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalar guard YAML or",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Scalar guard YAML and",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalar guard YAML and",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Scalar guard YAML not",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalar guard YAML not",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Scalar guard Date and",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalar guard Date and",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Scalar guard Date or",
+    "args": [
+      "base:query",
+      "path=Edges/Cases.base",
+      "view=Scalar guard Date or",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Explicit text ASC",
+    "args": [
+      "base:query",
+      "path=Ordering/Order.base",
+      "view=Explicit text ASC",
+      "format=json"
+    ]
+  },
+  {
+    "name": "Explicit text DESC",
+    "args": [
+      "base:query",
+      "path=Ordering/Order.base",
+      "view=Explicit text DESC",
+      "format=json"
+    ]
+  }
+]

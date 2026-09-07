@@ -1,0 +1,100 @@
+filters: file.path.startsWith("Fixture/")
+views:
+- type: table
+  name: All
+  filters: file.ext == "md"
+  order:
+  - file.name
+  - status
+  - sample_date
+  - score
+- type: table
+  name: Due
+  filters:
+    and:
+    - file.ext == "md"
+    - sample_date <= date("2026-09-07")
+    - status != "[[Done]]"
+  order:
+  - file.name
+  - sample_date
+- type: table
+  name: Truthy
+  filters:
+    and:
+    - file.ext == "md"
+    - sample_date
+  order:
+  - file.name
+- type: table
+  name: Missing comparison
+  filters:
+    and:
+    - file.ext == "md"
+    - score < 3
+  order:
+  - file.name
+  - score
+- type: table
+  name: Names
+  filters: file.ext == "md"
+- type: table
+  name: Sorted
+  filters: file.ext == "md"
+  order:
+  - file.name
+  - score
+  sort:
+  - property: score
+    direction: DESC
+  limit: 2
+- type: table
+  name: Empty
+  filters:
+    and:
+    - file.ext == "md"
+    - status == ""
+  order:
+  - file.name
+- type: table
+  name: 'Null'
+  filters:
+    and:
+    - file.ext == "md"
+    - status == null
+  order:
+  - file.name
+- type: table
+  name: Numeric string
+  filters:
+    and:
+    - file.ext == "md"
+    - score == "2"
+  order:
+  - file.name
+- type: table
+  name: Numeric
+  filters:
+    and:
+    - file.ext == "md"
+    - score == 2
+  order:
+  - file.name
+- type: table
+  name: Boolean
+  filters:
+    and:
+    - file.ext == "md"
+    - score && status != "[[Done]]"
+  order:
+  - file.name
+- type: table
+  name: Not
+  filters:
+    and:
+    - file.ext == "md"
+    - not:
+      - status == "[[Done]]"
+      - status == "Waiting"
+  order:
+  - file.name

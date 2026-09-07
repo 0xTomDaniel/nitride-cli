@@ -1,0 +1,40 @@
+{
+  "name": "@emberagi/nitride-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Obsidian-compatible headless Base queries",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "nitride": "skills/nitride/scripts/nitride.mjs"
+  },
+  "files": [
+    "skills/nitride",
+    "README.md",
+    "LICENSE",
+    "docs"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && vitest run",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run test:package",
+    "capture:native": "node scripts/capture-native.mjs",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/*.ts\" \"scripts/*.mjs\" \"tests/*.mjs\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/*.ts\" \"scripts/*.mjs\" \"tests/*.mjs\"",
+    "test:package": "node tests/package.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "26.5.0",
+    "esbuild": "0.28.2",
+    "prettier": "3.9.6",
+    "typescript": "7.0.2",
+    "vitest": "5.0.0",
+    "yaml": "2.9.0",
+    "zod": "4.5.4"
+  }
+}

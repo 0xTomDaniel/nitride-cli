@@ -1,0 +1,50 @@
+{
+  "filters": "file.ext == \"md\" && file.path.startsWith(\"Reminders/\")",
+  "views": [
+    {
+      "type": "table",
+      "name": "Task sweep",
+      "filters": {
+        "and": [
+          "file.path.startsWith(\"Reminders/Tasks/\")",
+          {
+            "or": [
+              "due <= today()",
+              "review_on <= today()"
+            ]
+          },
+          "status != \"[[Done]]\"",
+          "status != \"[[Closed]]\""
+        ]
+      },
+      "order": [
+        "file.name",
+        "due",
+        "review_on",
+        "status",
+        "related"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "All note reminders",
+      "filters": {
+        "and": [
+          "review_on",
+          "review_on <= today()",
+          "status != \"[[Done]]\"",
+          "status != \"[[Closed]]\"",
+          "status != \"[[Reviewed]]\"",
+          "status != \"Done\"",
+          "status != \"Closed\"",
+          "status != \"Reviewed\""
+        ]
+      },
+      "order": [
+        "file.name",
+        "review_on",
+        "status"
+      ]
+    }
+  ]
+}

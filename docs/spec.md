@@ -1,6 +1,6 @@
 # Nitride product contract
 
-Status: agreed product direction; implementation details marked pending below.
+Status: read-only Base slice implemented; broader parity work remains scoped below.
 
 ## Problem statement
 
@@ -30,8 +30,8 @@ then expand only through observed compatibility contracts.
 ## Implementation decisions
 
 - Owner/repository: EmberAGI/nitride-cli; public, MIT.
-- TypeScript/Node; distribute compiled, bundled JavaScript. Exact runtime floor,
-  package name, release mechanism, and dependency choices remain pending.
+- TypeScript/Node; distribute compiled, bundled JavaScript. Node.js 22+ runtime; package structure `@emberagi/nitride-cli`, command `nitride`.
+  The bundled skill is installable; npm registry publication remains pending.
 - The public CLI Interface is the conformance Seam. The native command runner
   and Nitride runner are test Adapters; production execution requires no desktop.
 - Query interpretation belongs in one Module behind that Interface. It provides
@@ -66,7 +66,8 @@ future implementation scope.
 
 The May discussion resolved “1:1 map” as inventory and classification of every
 command, not a promise to implement every desktop behavior. September selected
-Bases first. The full inventory remains pending.
+Bases first. The initial 102-command inventory is documented; detailed contracts for
+unimplemented commands remain pending.
 
 These decisions were recovered from the May 31 naming/intake discussion and
 September 6–7 Bases-first discussion. Private transcripts remain outside this repo.
