@@ -73,3 +73,13 @@ These decisions were recovered from the May 31 naming/intake discussion and
 September 6–7 Bases-first discussion. Private transcripts remain outside this repo.
 No new ADR is required at initialization; write one if subsequent work exposes
 a consequential tradeoff needing a durable rationale.
+
+## Linked-period queries
+
+The next bounded capability is the existing weekly/sprint view expression:
+`list(period).filter(file(value).properties.week_start <= today() && file(value).properties.week_end >= today()).length > 0`.
+Support file.basename rendering and scalar linked metadata behind the same
+public query Interface. Build one per-query metadata index before evaluation;
+resolve links only within visible vault files, reject ambiguous shorthand, and
+retain strict malformed-metadata failures. No persistent index or additional
+storage is introduced. The documented subset remains the compatibility limit.

@@ -68,5 +68,7 @@ bundle/source map and third-party notices with source changes; CI checks drift.
 - [Validation report](docs/validation.md)
 
 This is a tested Base subset, not complete Obsidian parity. Mutations, formulas,
-linked-file traversal, desktop automation, plugins, and sync are not implemented.
+arbitrary linked-file operations, desktop automation, plugins, and sync are not implemented.
+Linked-period queries using `list(...).filter(file(value).properties...).length`
+are supported within the documented subset, including Exo's weekly/sprint views.
 Nitride is independent and is not affiliated with Obsidian. Licensed under MIT.

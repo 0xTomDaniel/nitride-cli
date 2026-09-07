@@ -1,0 +1,4 @@
+---
+{}
+---
+Synthetic period fixture.

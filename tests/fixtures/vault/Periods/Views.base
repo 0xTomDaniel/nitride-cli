@@ -1,0 +1,69 @@
+{
+  "filters": "file.folder == \"Periods/Tasks\"",
+  "views": [
+    {
+      "type": "cards",
+      "name": "This Week",
+      "filters": {
+        "and": [
+          "list(week).filter(file(value).properties.week_start <= date(\"2026-09-07\") && file(value).properties.week_end >= date(\"2026-09-07\")).length > 0",
+          "status != \"[[Done]]\"",
+          "status != \"[[Closed]]\"",
+          "status != \"[[Someday]]\""
+        ]
+      },
+      "order": [
+        "file.name",
+        "file.basename",
+        "sprint"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Current Sprint",
+      "filters": "list(sprint).filter(file(value).properties.week_start <= date(\"2026-09-07\") && file(value).properties.week_end >= date(\"2026-09-07\")).length > 0"
+    },
+    {
+      "type": "table",
+      "name": "Missing list",
+      "filters": "list(week).length == 0"
+    },
+    {
+      "type": "table",
+      "name": "Filtered list",
+      "filters": "list(week).filter(value != null).length > 0"
+    },
+    {
+      "type": "table",
+      "name": "Last day",
+      "filters": "list(week).filter(file(value).properties.week_start <= date(\"2026-09-13\") && file(value).properties.week_end >= date(\"2026-09-13\")).length > 0"
+    },
+    {
+      "type": "table",
+      "name": "After period",
+      "filters": "list(week).filter(file(value).properties.week_start <= date(\"2026-09-14\") && file(value).properties.week_end >= date(\"2026-09-14\")).length > 0"
+    },
+    {
+      "type": "table",
+      "name": "Bracket property",
+      "filters": "list(week).filter(file(value).properties[\"week_start\"] == date(\"2026-09-07\")).length > 0"
+    },
+    {
+      "type": "cards",
+      "name": "Live This Week",
+      "filters": {
+        "and": [
+          "list(week).filter(file(value).properties.week_start <= today() && file(value).properties.week_end >= today()).length > 0",
+          "status != \"[[Done]]\"",
+          "status != \"[[Closed]]\"",
+          "status != \"[[Someday]]\""
+        ]
+      },
+      "order": [
+        "file.name",
+        "file.basename",
+        "sprint"
+      ]
+    }
+  ]
+}

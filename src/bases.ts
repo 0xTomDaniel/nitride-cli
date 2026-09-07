@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import { basename, extname, dirname, join } from "node:path";
+import { basename, extname, dirname, join, posix } from "node:path";
 import { parseDocument } from "yaml";
 import { z } from "zod";
 import {
@@ -8,6 +8,7 @@ import {
   property,
   scalar,
   type Row,
+  type ResolveFile,
 } from "./expression.js";
 function readText(path: string): string {
   try {
@@ -54,9 +55,10 @@ function metadata(text: string): Record<string, unknown> {
 function predicate(
   spec: unknown,
   today: string,
+  resolve: ResolveFile,
 ): ((row: Row) => boolean) | undefined {
   if (spec === undefined) return undefined;
-  if (typeof spec === "string") return expression(spec, today);
+  if (typeof spec === "string") return expression(spec, today, resolve);
   const obj = mapping.parse(spec),
     keys = Object.keys(obj);
   if (keys.length !== 1 || !["and", "or", "not"].includes(keys[0]!))
@@ -65,7 +67,7 @@ function predicate(
   const children = z
     .array(z.unknown())
     .parse(obj[op])
-    .map((c) => predicate(c, today))
+    .map((c) => predicate(c, today, resolve))
     .filter((c) => c !== undefined);
   // Native ignores empty groups, including nested groups. Absence is distinct
   // from a predicate returning true when composing an OR or NOT group.
@@ -82,7 +84,7 @@ function column(key: string, raw = false): (row: Row) => unknown {
   if (explicitNote) key = key.slice(5);
   if (!explicitNote && key.startsWith("file.")) {
     const field = key.slice(5);
-    if (!["path", "name", "ext", "folder"].includes(field))
+    if (!["path", "name", "basename", "ext", "folder"].includes(field))
       throw Error(`Unsupported column: ${key}`);
     return (row) => property(row, "file", field);
   }
@@ -153,8 +155,44 @@ export function query(
     : base.views[0];
   if (!raw) throw Error("View not found");
   const view = viewSchema.parse(raw);
-  const globalFilter = predicate(base.filters, today),
-    viewFilter = predicate(view.filters, today);
+  const index = new Map<string, Row>();
+  const resolve: ResolveFile = (link, from) => {
+    let target = link;
+    if (target.startsWith("[[") && target.endsWith("]]"))
+      target = target.slice(2, -2);
+    target = target.split("|")[0]!.split("#")[0]!;
+    if (!target) return from;
+    if (
+      target.startsWith("/") ||
+      target.includes("://") ||
+      target.includes("\\")
+    )
+      throw Error("Unsupported linked-file path");
+    const relative = posix.normalize(posix.join(from.file.folder!, target));
+    if (relative.startsWith("../"))
+      throw Error("Linked-file path leaves vault");
+    const candidates = target.startsWith(".")
+      ? [relative]
+      : target.includes("/")
+        ? [target, relative]
+        : [];
+    for (const p of candidates) {
+      const found = index.get(p) ?? index.get(p + ".md");
+      if (found) return found;
+    }
+    const suffixes = ["/" + target, "/" + target + ".md"];
+    const matches = [...index.values()].filter(
+      (r) =>
+        r.file.path === target ||
+        r.file.path === target + ".md" ||
+        suffixes.some((suffix) => r.file.path!.endsWith(suffix)),
+    );
+    if (matches.length > 1)
+      throw Error("Ambiguous linked-file path; use a qualified link");
+    return matches[0] ?? null;
+  };
+  const globalFilter = predicate(base.filters, today, resolve),
+    viewFilter = predicate(view.filters, today, resolve);
   const keys = view.order ?? ["file.name"];
   const getters = keys.map((key) => column(key, true));
   const sorts = (view.sort ?? []).map((s) => ({
@@ -162,6 +200,7 @@ export function query(
     get: column(s.property),
   }));
   const fileLabels = new Map([
+    ["file.basename", "file base name"],
     ["file.ext", "file extension"],
     ["file.folder", "folder"],
   ]);
@@ -172,7 +211,6 @@ export function query(
   );
   if (new Set(labels).size !== labels.length || labels.includes("path"))
     throw Error("Duplicate/reserved output column label");
-  const rows: Row[] = [];
   for (const path of vault.paths) {
     const ext = extname(path),
       folder = dirname(path);
@@ -181,13 +219,16 @@ export function query(
       file: {
         path,
         name: basename(path, ext),
+        basename: basename(path, ext),
         ext: ext.slice(1),
         folder: folder === "." ? "" : folder,
       },
     };
-    if ((globalFilter?.(row) ?? true) && (viewFilter?.(row) ?? true))
-      rows.push(row);
+    index.set(path, row);
   }
+  const rows = [...index.values()].filter(
+    (row) => (globalFilter?.(row) ?? true) && (viewFilter?.(row) ?? true),
+  );
   const collator = new Intl.Collator("en", {
     numeric: true,
     sensitivity: "base",

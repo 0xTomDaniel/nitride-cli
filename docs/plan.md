@@ -3,7 +3,7 @@
 Completed in the Bases implementation branch:
 
 1. Public MIT repository, product contract, source and evidence rules.
-2. Disposable-vault native characterization: 71 cases; 102-command inventory.
+2. Disposable-vault native characterization: 79 cases; 102-command inventory.
 3. TypeScript CLI: discovery, read-only queries, explicit view listing,
    dates/timezones, output formats, and explicit failure behavior.
 4. Bundled executable and portable skill, with source maps and dependency notices.
@@ -14,11 +14,11 @@ See [validation](validation.md) for actual run results and their limits.
 
 Remaining separate work:
 
-- Merge/release the implementation; npm registry publication is not performed.
+- The initial implementation is merged; land the linked-period increment. npm registry publication is not performed.
 - Integrate into Exo. Its current Voice container does not have Node on PATH;
   runtime materialization is required before routing agents to Nitride there.
 - Resolve Exo-specific status-filter policy and required unsupported planning
-  views (for example linked-week traversal) in their owning scope. This CLI does
+  views in their owning scope. Linked-week/sprint filters now have a recorded implementation; Exo must update its pin and validate the actual views. This CLI does
   not by itself close all Exo Phase 2 retrieval requirements.
 - Characterize additional functions/formulas/view options and command families
   before expanding the supported contract. Mutations remain deferred.

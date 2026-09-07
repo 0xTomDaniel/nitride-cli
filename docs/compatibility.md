@@ -9,7 +9,7 @@ characterization must use a disposable synthetic vault, never a personal vault.
 ## Verified reference
 
 The checked-in [recording](../tests/fixtures/native-results.json) contains
-71 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
+79 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
 The recorder verified that the disposable vault exactly matched committed
 fixtures before and after capture. Outputs are unmodified, with command arguments,
 exit status, stderr, retry attempts, fixture hashes, and capture provenance.
@@ -57,8 +57,8 @@ and the [102-command planning inventory](command-inventory.md).
   if that note would fall outside the selected view. There is no transactional
   snapshot guarantee while another process edits the vault.
 - Unsupported selected-view features fail; unsupported unselected view expressions
-  are not evaluated. Flat list rendering is supported; list filtering and nested
-  object/list values are not. Locale/linked-target semantics beyond the recorded
+  are not evaluated. Flat list rendering and the documented linked-period list
+  filters are supported; nested object/list values are not. Locale/linked-target semantics beyond the recorded
   subset are not a parity claim.
 
 ## Reproduce native evidence

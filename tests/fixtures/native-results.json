@@ -3,7 +3,7 @@
     "timezone": "America/Denver",
     "provider": "Official Obsidian CLI",
     "version": "1.13.7 (installer 1.12.4)",
-    "capturedAt": "2026-09-07T20:27:57.644Z",
+    "capturedAt": "2026-09-07T21:22:16.578Z",
     "platform": "darwin",
     "disposableVault": true,
     "normalization": "None",
@@ -79,6 +79,62 @@
       {
         "path": "Ordering/Z.md",
         "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Periods/Calendar/Active.md",
+        "sha256": "cce8f6508cd304204bb4bad0c61910a59b28006bc2d994e5cadcb358e72eef35"
+      },
+      {
+        "path": "Periods/Calendar/Past.md",
+        "sha256": "2d5fc6c5f689e3dfc4d62c191fcc572bd3f57058865bdefb3b5f23811ea28f88"
+      },
+      {
+        "path": "Periods/Tasks/Alias.md",
+        "sha256": "99f2f76f307cd6ca9767294a5b79f681d42db5641efb809376fc90926802d9f8"
+      },
+      {
+        "path": "Periods/Tasks/Current.md",
+        "sha256": "f07e389926ed616c618258e6026b5370893ca743902381522a6a5fb099366d67"
+      },
+      {
+        "path": "Periods/Tasks/Done.md",
+        "sha256": "3608d8dda84729f797cccdeb06bf572254627826d2f161fdfdc0e60e2e147673"
+      },
+      {
+        "path": "Periods/Tasks/Empty.md",
+        "sha256": "5e67e6ac2151c9307dafdf355e70e907d8517d803b5f8e41ec1696dcf0d304c8"
+      },
+      {
+        "path": "Periods/Tasks/Heading.md",
+        "sha256": "2b0bd33c16be0825bebf27653150879adbc9211b09cf84d2d1b55bd94a6fdb29"
+      },
+      {
+        "path": "Periods/Tasks/Missing.md",
+        "sha256": "f11a8770f71698002a2fb1e431d4525d74f49be72237b365aa4d51904b2f7781"
+      },
+      {
+        "path": "Periods/Tasks/Mixed.md",
+        "sha256": "3d8862315acee621f45ba793f415f1e241173f1e1d68a704757383ad7b40fd7d"
+      },
+      {
+        "path": "Periods/Tasks/Null.md",
+        "sha256": "b51c48856bb061a1902ed88bc9f9c76114298af36b3c0c470b0070d9f9be2de7"
+      },
+      {
+        "path": "Periods/Tasks/Old.md",
+        "sha256": "f64db63cdc8dd7dba9dacaca12ef4ccb70b61cb9c046912fc006c534e6af2a6e"
+      },
+      {
+        "path": "Periods/Tasks/Relative.md",
+        "sha256": "a4066f497ca88bf30cc5c8d5f70e3da1be31d889c9d2a521ecce9c66e67b9f8a"
+      },
+      {
+        "path": "Periods/Tasks/Unresolved.md",
+        "sha256": "d95c686d374935a1b1bf9da31bb55dc9a94fbba9753aaa3adeb2963aa240f2ce"
+      },
+      {
+        "path": "Periods/Views.base",
+        "sha256": "66b0bce1dcabf6a64218022a9be31e2769179a5b471bd99d77a2c3779229a219"
       },
       {
         "path": "Reminders/People/Person.md",
@@ -420,12 +476,12 @@
       "args": [
         "bases"
       ],
-      "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nReminders/Sweeps.base\n",
+      "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nPeriods/Views.base\nReminders/Sweeps.base\n",
       "stderr": "",
       "exitCode": 0,
       "attempts": [
         {
-          "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nReminders/Sweeps.base\n",
+          "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nPeriods/Views.base\nReminders/Sweeps.base\n",
           "stderr": "",
           "exitCode": 0
         }
@@ -1457,6 +1513,160 @@
           "exitCode": 0
         }
       ]
+    },
+    {
+      "name": "periods-This Week",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=This Week",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "periods-Current Sprint",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=Current Sprint",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "periods-Missing list",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=Missing list",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Empty.md\",\n    \"file name\": \"Empty\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Empty.md\",\n    \"file name\": \"Empty\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "periods-Filtered list",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=Filtered list",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Old.md\",\n    \"file name\": \"Old\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Unresolved.md\",\n    \"file name\": \"Unresolved\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Old.md\",\n    \"file name\": \"Old\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Unresolved.md\",\n    \"file name\": \"Unresolved\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "periods-Last day",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=Last day",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "periods-After period",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=After period",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "periods-Bracket property",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=Bracket property",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Done.md\",\n    \"file name\": \"Done\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "periods-Live This Week",
+      "args": [
+        "base:query",
+        "path=Periods/Views.base",
+        "view=Live This Week",
+        "format=json"
+      ],
+      "liveClock": true,
+      "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/Alias.md\",\n    \"file name\": \"Alias\",\n    \"file base name\": \"Alias\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Current.md\",\n    \"file name\": \"Current\",\n    \"file base name\": \"Current\",\n    \"sprint\": \"[[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Heading.md\",\n    \"file name\": \"Heading\",\n    \"file base name\": \"Heading\",\n    \"sprint\": null\n  },\n  {\n    \"path\": \"Periods/Tasks/Mixed.md\",\n    \"file name\": \"Mixed\",\n    \"file base name\": \"Mixed\",\n    \"sprint\": \"[[Past]], [[Active]]\"\n  },\n  {\n    \"path\": \"Periods/Tasks/Relative.md\",\n    \"file name\": \"Relative\",\n    \"file base name\": \"Relative\",\n    \"sprint\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ],
+      "clockDate": "2026-09-07"
     }
   ]
 }

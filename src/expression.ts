@@ -9,9 +9,14 @@ type Expr =
   | { kind: "property"; scope: "note" | "file"; key: string }
   | { kind: "unary"; op: string; value: Expr }
   | { kind: "binary"; op: string; left: Expr; right: Expr }
-  | { kind: "call"; name: string; args: Expr[]; target?: Expr };
-const fields = new Set(["path", "name", "ext", "folder"]);
-const methods = new Set(["startsWith", "endsWith", "contains"]);
+  | { kind: "call"; name: string; args: Expr[]; target?: Expr }
+  | { kind: "value" }
+  | { kind: "linked-property"; link: Expr; key: string }
+  | { kind: "length"; target: Expr };
+export type ResolveFile = (link: string, from: Row) => Row | null;
+type Value = Scalar | Scalar[];
+const fields = new Set(["path", "name", "basename", "ext", "folder"]);
+const methods = new Set(["startsWith", "endsWith", "contains", "filter"]);
 const precedence: Record<string, number> = {
   "||": 1,
   "&&": 2,
@@ -108,6 +113,7 @@ function stringValue(token: string): string {
 function parse(source: string): Expr {
   const tokens = tokenize(source);
   let offset = 0;
+  let filterDepth = 0;
   const peek = () => tokens[offset];
   const take = () => {
     const t = tokens[offset++];
@@ -149,7 +155,7 @@ function parse(source: string): Expr {
       };
     else if (/^[A-Za-z_][A-Za-z_0-9]*$/.test(token)) {
       if (peek() === "(") {
-        if (!["today", "date"].includes(token))
+        if (!["today", "date", "list", "file"].includes(token))
           throw Error(`Unsupported Base function: ${token}`);
         const args = argumentsList();
         if (args.length !== (token === "today" ? 0 : 1))
@@ -159,7 +165,25 @@ function parse(source: string): Expr {
             throw Error("date requires text");
           isoDate(args[0].value);
         }
-        node = { kind: "call", name: token, args };
+        if (token === "file") {
+          expect(".");
+          expect("properties");
+          let key: string;
+          if (peek() === "[") {
+            take();
+            const k = take();
+            if (!k.startsWith('"') && !k.startsWith("'"))
+              throw Error("Property index must be literal text");
+            key = stringValue(k);
+            expect("]");
+          } else {
+            expect(".");
+            key = take();
+            if (!/^[A-Za-z_][A-Za-z_0-9]*$/.test(key))
+              throw Error("Invalid linked property");
+          }
+          node = { kind: "linked-property", link: args[0]!, key };
+        } else node = { kind: "call", name: token, args };
       } else if (token === "file" || token === "note") {
         let key: string;
         if (peek() === ".") {
@@ -178,13 +202,22 @@ function parse(source: string): Expr {
         if (token === "file" && !fields.has(key))
           throw Error(`Unsupported file property: ${key}`);
         node = { kind: "property", scope: token, key };
-      } else node = { kind: "property", scope: "note", key: token };
+      } else if (token === "value" && filterDepth) node = { kind: "value" };
+      else node = { kind: "property", scope: "note", key: token };
     } else throw Error(`Unsupported expression token: ${token}`);
     while (peek() === ".") {
       take();
       const name = take();
+      if (name === "length") {
+        if (node.kind !== "call" || !["list", "filter"].includes(node.name))
+          throw Error("Only list length is supported");
+        node = { kind: "length", target: node };
+        continue;
+      }
       if (!methods.has(name)) throw Error(`Unsupported method: ${name}`);
+      if (name === "filter") filterDepth++;
       const args = argumentsList();
+      if (name === "filter") filterDepth--;
       if (args.length !== 1) throw Error(`Invalid argument count: ${name}`);
       node = { kind: "call", name, target: node, args };
     }
@@ -208,25 +241,47 @@ function parse(source: string): Expr {
     throw Error(`Unsupported expression continuation: ${peek()}`);
   return tree;
 }
-function evaluate(node: Expr, row: Row, today: string): Scalar {
+function evaluate(
+  node: Expr,
+  row: Row,
+  today: string,
+  resolve: ResolveFile,
+  value: Scalar = null,
+): Value {
+  const read = (expr: Expr) => evaluate(expr, row, today, resolve, value);
+  const readScalar = (expr: Expr) => scalar(read(expr));
   switch (node.kind) {
+    case "value":
+      return value;
+    case "linked-property": {
+      const link = readScalar(node.link);
+      if (link === null) return null;
+      if (typeof link !== "string") throw Error("file requires a text link");
+      const target = resolve(link, row);
+      return target ? property(target, "note", node.key) : null;
+    }
+    case "length": {
+      const items = read(node.target);
+      if (!Array.isArray(items)) throw Error("length requires a list");
+      return items.length;
+    }
     case "literal":
       return node.value;
     case "property":
       return property(row, node.scope, node.key);
     case "unary": {
-      const v = evaluate(node.value, row, today);
+      const v = readScalar(node.value);
       if (node.op === "!") return !v;
       if (typeof v !== "number") throw Error("Unary sign requires a number");
       return node.op === "-" ? -v : v;
     }
     case "binary": {
-      const a = evaluate(node.left, row, today);
+      const a = readScalar(node.left);
       if (node.op === "&&")
-        return Boolean(a) && Boolean(evaluate(node.right, row, today));
+        return Boolean(a) && Boolean(readScalar(node.right));
       if (node.op === "||")
-        return Boolean(a) || Boolean(evaluate(node.right, row, today));
-      const b = evaluate(node.right, row, today);
+        return Boolean(a) || Boolean(readScalar(node.right));
+      const b = readScalar(node.right);
       const c = compare(a, b);
       switch (node.op) {
         case "==":
@@ -246,13 +301,30 @@ function evaluate(node: Expr, row: Row, today: string): Scalar {
     }
     case "call": {
       if (node.name === "today") return today;
-      const arg = evaluate(node.args[0]!, row, today);
+      if (node.name === "list") {
+        const arg = node.args[0]!;
+        const raw =
+          arg.kind === "property"
+            ? Object.hasOwn(row[arg.scope], arg.key)
+              ? row[arg.scope][arg.key]
+              : null
+            : read(arg);
+        return Array.isArray(raw) ? raw.map(scalar) : [scalar(raw)];
+      }
+      if (node.name === "filter") {
+        const items = read(node.target!);
+        if (!Array.isArray(items)) throw Error("filter requires a list");
+        return items.filter((item) =>
+          Boolean(scalar(evaluate(node.args[0]!, row, today, resolve, item))),
+        );
+      }
+      const arg = readScalar(node.args[0]!);
       if (node.name === "date") {
         if (typeof arg !== "string")
           throw Error("date requires YYYY-MM-DD text");
         return isoDate(arg);
       }
-      const target = evaluate(node.target!, row, today);
+      const target = readScalar(node.target!);
       if (target === null) return false;
       if (typeof target !== "string" || typeof arg !== "string")
         throw Error("String function requires strings");
@@ -265,7 +337,8 @@ function evaluate(node: Expr, row: Row, today: string): Scalar {
 export function expression(
   source: string,
   today: string,
+  resolve: ResolveFile,
 ): (row: Row) => boolean {
   const tree = parse(source);
-  return (row) => Boolean(evaluate(tree, row, today));
+  return (row) => Boolean(scalar(evaluate(tree, row, today, resolve)));
 }

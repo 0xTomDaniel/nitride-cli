@@ -23,15 +23,25 @@ Top-level formulas, display-property configuration, grouping, summaries, and
 unrecognized selected-view features fail. UI layout options are not emulated.
 
 Filter support: named scalar note properties (`status`, `note.status`,
-`note["odd key"]`); `file.path`, `file.name`, `file.ext`, `file.folder`;
+`note["odd key"]`); `file.path`, `file.name`, `file.basename`, `file.ext`, `file.folder`;
 strings/numbers/booleans/null; comparisons; `&&`, `||`, `!`, parentheses,
 unary signs; nested YAML `and`/`or`/`not`; `today()`, `date("YYYY-MM-DD")`;
 string `startsWith`, `endsWith`, `contains`.
 
 Columns support unprefixed or `note.`-prefixed note property names and the listed file properties.
 Flat lists render as comma-separated cells; tags render with `#` prefixes.
-List filtering, nested objects, formula evaluation, linked-file traversal,
-`list(...).filter(...)`, and other Base functions are unsupported. A scalar
+Linked-period filters support `list(property).filter(predicate).length`, with
+`value` bound to each scalar list item and `file(value).properties.<name>` (or
+a literal bracket key) reading scalar metadata from the linked note. Scalar
+inputs, including null, become one-item lists; list inputs retain their items.
+Wikilinks may have aliases/headings, explicit relative paths, or unique path
+suffixes. Missing targets yield null metadata. Ambiguous shorthand links fail;
+use a qualified vault-relative link rather than depending on desktop tie-breaking.
+Links cannot leave the visible vault. All visible Markdown is parsed before
+filter evaluation, so malformed linked metadata fails rather than disappearing.
+
+Nested objects/lists, formula evaluation, arbitrary file object operations,
+other list methods, and other Base functions are unsupported. A scalar
 operation on a list fails rather than guessing its meaning.
 
 Native Obsidian is the reference for the recorded subset, not a runtime dependency.
