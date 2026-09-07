@@ -48,6 +48,13 @@ export function compare(a: Scalar, b: Scalar): number | null {
     y = String(b);
   return x === y ? 0 : x < y ? -1 : 1;
 }
+function equal(a: Scalar, b: Scalar): boolean {
+  if (a === null || b === null) return a === b;
+  // Boolean equality uses numeric coercion, not rendered-cell strings.
+  if (typeof a === "boolean" || typeof b === "boolean")
+    return Number(a) === Number(b);
+  return compare(a, b) === 0;
+}
 export function isoDate(value: string): string {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value))
     throw Error("Date must be YYYY-MM-DD");
@@ -214,17 +221,18 @@ function evaluate(node: Expr, row: Row, today: string): Scalar {
       return node.op === "-" ? -v : v;
     }
     case "binary": {
-      const a = evaluate(node.left, row, today),
-        b = evaluate(node.right, row, today);
-      if (node.op === "&&") return Boolean(a) && Boolean(b);
-      if (node.op === "||") return Boolean(a) || Boolean(b);
-      const c = compare(a, b),
-        eq = (a === null && b === null) || c === 0;
+      const a = evaluate(node.left, row, today);
+      if (node.op === "&&")
+        return Boolean(a) && Boolean(evaluate(node.right, row, today));
+      if (node.op === "||")
+        return Boolean(a) || Boolean(evaluate(node.right, row, today));
+      const b = evaluate(node.right, row, today);
+      const c = compare(a, b);
       switch (node.op) {
         case "==":
-          return eq;
+          return equal(a, b);
         case "!=":
-          return !eq;
+          return !equal(a, b);
         case "<":
           return c !== null && c < 0;
         case "<=":

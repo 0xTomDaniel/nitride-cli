@@ -1,1 +1,66 @@
-{"filters": "file.ext == \"md\" && file.folder == \"Ordering\"", "views": [{"type": "table", "name": "Names", "order": ["file.name"]}]}
+{
+  "filters": "file.ext == \"md\" && file.folder == \"Ordering\"",
+  "views": [
+    {
+      "type": "table",
+      "name": "Names",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Explicit filename ASC",
+      "filters": "file.name == \"Note2\" || file.name == \"Note10\"",
+      "sort": [
+        {
+          "property": "file.name",
+          "direction": "ASC"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "table",
+      "name": "Explicit filename DESC",
+      "filters": "file.name == \"Note2\" || file.name == \"Note10\"",
+      "sort": [
+        {
+          "property": "file.name",
+          "direction": "DESC"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "table",
+      "name": "Explicit text ASC",
+      "filters": "label != null",
+      "sort": [
+        {
+          "property": "label",
+          "direction": "ASC"
+        }
+      ],
+      "order": [
+        "file.name",
+        "label"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Explicit text DESC",
+      "filters": "label != null",
+      "sort": [
+        {
+          "property": "label",
+          "direction": "DESC"
+        }
+      ],
+      "order": [
+        "file.name",
+        "label"
+      ]
+    }
+  ]
+}

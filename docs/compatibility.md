@@ -9,7 +9,7 @@ characterization must use a disposable synthetic vault, never a personal vault.
 ## Verified reference
 
 The checked-in [recording](../tests/fixtures/native-results.json) contains
-45 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
+71 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
 The recorder verified that the disposable vault exactly matched committed
 fixtures before and after capture. Outputs are unmodified, with command arguments,
 exit status, stderr, retry attempts, fixture hashes, and capture provenance.
@@ -17,6 +17,17 @@ exit status, stderr, retry attempts, fixture hashes, and capture provenance.
 This replaces the provisional Python spike's recordings. No Python runtime or
 prototype code is required by Nitride. These cases establish the documented
 subset, not the complete Base language or every installation's configuration.
+
+The PR review regressions add explicit natural sorting (filename and text,
+ascending/descending, including limits), boolean/string equality and inequality,
+empty/nested YAML groups, and guarded unary/date operations. Empty groups are
+omitted when combining filters; a wholly empty filter imposes no restriction.
+Boolean evaluation short-circuits in expressions and YAML groups, while syntax
+validation still examines every selected branch before scanning.
+
+These fixtures explicitly scope note scans to Markdown. General non-Markdown
+candidate selection and mixed relational/equality coercion beyond the recordings
+still need characterization; the review fixes do not establish those contracts.
 
 ## Commands
 

@@ -1,6 +1,22 @@
 # Validation — September 7, 2026
 
-## Results
+## PR review fixes
+
+All four confirmed review findings were reproduced through the public CLI before
+their fixes: explicit string sorting, boolean/string equality, empty filter
+groups, and guarded scalar evaluation. The suite now contains **71 native cases**
+(26 additions), including both sort directions and limits, equality/inequality,
+nested groups, expression/YAML guards, and date guards. All 45 prior native
+invocations and outputs remained unchanged during recapture.
+
+`npm run check` passed on macOS Node 26.0.0: format, strict types, build,
+**92 public CLI tests**, and all **71 isolated installed-skill cases** plus
+help/version/failure checks. Four new failure tests verify unsupported syntax is
+still rejected in skipped branches. The generated skill bundle was rebuilt.
+Linux/macOS Node 22 CI results are reported on the PR; the earlier Debian run
+below predates these fixes and is not a rerun of the expanded suite.
+
+## Initial implementation results
 
 - `npm run check`: passed on macOS, Node 26.0.0. Includes formatting,
   strict TypeScript checking, build, **62 public CLI tests**, and installed-skill

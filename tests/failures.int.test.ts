@@ -42,6 +42,17 @@ it("rejects unsupported functions in an empty selection", () =>
     writeFileSync(join(root, "Test.base"), base('file.hasLink("Anything")'));
     fails(root, ["base:query", "path=Test.base"], /Unsupported/);
   }));
+it.each([
+  'true || file.hasLink("Anything")',
+  { or: ["true", 'file.hasLink("Anything")'] },
+  { and: ["false", 'file.hasLink("Anything")'] },
+  { not: ["true", 'file.hasLink("Anything")'] },
+])("validates syntax even in skipped filter branches: %j", (filters) =>
+  scenario((root) => {
+    writeFileSync(join(root, "Test.base"), base("true", { filters }));
+    fails(root, ["base:query", "path=Test.base"], /Unsupported/);
+  }),
+);
 it("rejects unsupported selected view features instead of dropping them", () =>
   scenario((root) => {
     writeFileSync(

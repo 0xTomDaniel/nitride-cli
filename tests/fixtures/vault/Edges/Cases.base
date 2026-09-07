@@ -1,5 +1,5 @@
 {
-  "filters": "file.path.startsWith(\"Edges/\")",
+  "filters": "file.ext == \"md\" && file.path.startsWith(\"Edges/\")",
   "views": [
     {
       "type": "table",
@@ -152,6 +152,240 @@
       "order": [
         "file.name",
         "file.folder"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality == \"true\"",
+      "filters": "file.ext == \"md\" && enabled == \"true\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality != \"true\"",
+      "filters": "file.ext == \"md\" && enabled != \"true\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality == \"false\"",
+      "filters": "file.ext == \"md\" && enabled == \"false\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality != \"false\"",
+      "filters": "file.ext == \"md\" && enabled != \"false\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality == \"1\"",
+      "filters": "file.ext == \"md\" && enabled == \"1\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality != \"1\"",
+      "filters": "file.ext == \"md\" && enabled != \"1\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality == \"0\"",
+      "filters": "file.ext == \"md\" && enabled == \"0\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Boolean equality != \"0\"",
+      "filters": "file.ext == \"md\" && enabled != \"0\"",
+      "order": [
+        "file.name",
+        "enabled"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty group Or",
+      "filters": {
+        "or": []
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty group And",
+      "filters": {
+        "and": []
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty group Not",
+      "filters": {
+        "not": []
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty group Nested or",
+      "filters": {
+        "or": [
+          "false",
+          {
+            "and": []
+          }
+        ]
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty group Nested and",
+      "filters": {
+        "and": [
+          "true",
+          {
+            "or": []
+          }
+        ]
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty group Nested not",
+      "filters": {
+        "not": [
+          {
+            "and": []
+          }
+        ]
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty group Nested empty",
+      "filters": {
+        "or": [
+          {
+            "and": []
+          },
+          {
+            "not": []
+          }
+        ]
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar guard Expression or",
+      "filters": "score == null || -score < 0",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar guard Expression and",
+      "filters": "score != null && -score < 0",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar guard YAML or",
+      "filters": {
+        "or": [
+          "score == null",
+          "-score < 0"
+        ]
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar guard YAML and",
+      "filters": {
+        "and": [
+          "score != null",
+          "-score < 0"
+        ]
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar guard YAML not",
+      "filters": {
+        "not": [
+          "score == null",
+          "-score < 0"
+        ]
+      },
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar guard Date and",
+      "filters": "review_on && date(review_on) <= date(\"2026-09-07\")",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar guard Date or",
+      "filters": "review_on == null || review_on == \"\" || date(review_on) <= date(\"2026-09-07\")",
+      "order": [
+        "file.name"
       ]
     }
   ]

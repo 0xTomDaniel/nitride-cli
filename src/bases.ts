@@ -51,8 +51,11 @@ function metadata(text: string): Record<string, unknown> {
   if (end < 0) throw Error("Unclosed frontmatter");
   return mapping.parse(yaml(lines.slice(1, end).join("\n")) ?? {});
 }
-function predicate(spec: unknown, today: string): (row: Row) => boolean {
-  if (spec === undefined) return () => true;
+function predicate(
+  spec: unknown,
+  today: string,
+): ((row: Row) => boolean) | undefined {
+  if (spec === undefined) return undefined;
   if (typeof spec === "string") return expression(spec, today);
   const obj = mapping.parse(spec),
     keys = Object.keys(obj);
@@ -62,15 +65,17 @@ function predicate(spec: unknown, today: string): (row: Row) => boolean {
   const children = z
     .array(z.unknown())
     .parse(obj[op])
-    .map((c) => predicate(c, today));
-  return (row) => {
-    const results = children.map((f) => f(row));
-    return op === "and"
-      ? results.every(Boolean)
+    .map((c) => predicate(c, today))
+    .filter((c) => c !== undefined);
+  // Native ignores empty groups, including nested groups. Absence is distinct
+  // from a predicate returning true when composing an OR or NOT group.
+  if (!children.length) return undefined;
+  return (row) =>
+    op === "and"
+      ? children.every((f) => f(row))
       : op === "or"
-        ? results.some(Boolean)
-        : !results.some(Boolean);
-  };
+        ? children.some((f) => f(row))
+        : !children.some((f) => f(row));
 }
 function column(key: string, raw = false): (row: Row) => unknown {
   const explicitNote = key.startsWith("note.");
@@ -180,7 +185,8 @@ export function query(
         folder: folder === "." ? "" : folder,
       },
     };
-    if (globalFilter(row) && viewFilter(row)) rows.push(row);
+    if ((globalFilter?.(row) ?? true) && (viewFilter?.(row) ?? true))
+      rows.push(row);
   }
   const collator = new Intl.Collator("en", {
     numeric: true,
@@ -196,7 +202,11 @@ export function query(
       const x = scalar(sort.get(a)),
         y = scalar(sort.get(b));
       if (x === null || y === null) return x === y ? 0 : x === null ? 1 : -1;
-      return compare(x, y)! * (sort.direction === "DESC" ? -1 : 1);
+      const order =
+        typeof x === "string" && typeof y === "string"
+          ? collator.compare(x, y)
+          : compare(x, y)!;
+      return order * (sort.direction === "DESC" ? -1 : 1);
     });
   const result = !view.limit ? rows : rows.slice(0, view.limit);
   const cells = result.map((row) =>

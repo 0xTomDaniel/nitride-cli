@@ -3,14 +3,14 @@
     "timezone": "America/Denver",
     "provider": "Official Obsidian CLI",
     "version": "1.13.7 (installer 1.12.4)",
-    "capturedAt": "2026-09-07T19:59:46.311Z",
+    "capturedAt": "2026-09-07T20:27:57.644Z",
     "platform": "darwin",
     "disposableVault": true,
     "normalization": "None",
     "fixtures": [
       {
         "path": "Edges/Cases.base",
-        "sha256": "b593090be600d5daa1f9ab6afd556898dc494e39fb68ec8d2332b2517979e68c"
+        "sha256": "5a053e3a954ae6bbc03122eed69e1402678e8e0a2c39062a5082396c034aa912"
       },
       {
         "path": "Edges/Four.md",
@@ -66,15 +66,15 @@
       },
       {
         "path": "Ordering/Note10.md",
-        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+        "sha256": "effc592b8f1ee6e49c581bd29dcc2b4c32e42cf9603fb45cfd69377c88c7df06"
       },
       {
         "path": "Ordering/Note2.md",
-        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+        "sha256": "0db01794e7324f67d9aecdd62f862bfd42366eee8dea01aa8b6af1d49c770d4b"
       },
       {
         "path": "Ordering/Order.base",
-        "sha256": "a461e22e5dea0dcede00a40f2f7c9ceedaff8fc1a66c0dc2e7c3225f6c02f4b6"
+        "sha256": "5e5b90684e434d3bad5f105ee75dd6183c72c387fe88dd491dca21cf5ea64f0d"
       },
       {
         "path": "Ordering/Z.md",
@@ -959,6 +959,500 @@
       "attempts": [
         {
           "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Explicit filename ASC",
+      "args": [
+        "base:query",
+        "path=Ordering/Order.base",
+        "view=Explicit filename ASC",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Explicit filename DESC",
+      "args": [
+        "base:query",
+        "path=Ordering/Order.base",
+        "view=Explicit filename DESC",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality == \"true\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality == \"true\"",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality != \"true\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality != \"true\"",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality == \"false\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality == \"false\"",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality != \"false\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality != \"false\"",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality == \"1\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality == \"1\"",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality != \"1\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality != \"1\"",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality == \"0\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality == \"0\"",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\",\n    \"enabled\": \"false\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Boolean equality != \"0\"",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Boolean equality != \"0\"",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\",\n    \"enabled\": null\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\",\n    \"enabled\": \"true\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\",\n    \"enabled\": \"true\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty group Or",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty group Or",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty group And",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty group And",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty group Not",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty group Not",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty group Nested or",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty group Nested or",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty group Nested and",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty group Nested and",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty group Nested not",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty group Nested not",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Empty group Nested empty",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Empty group Nested empty",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Scalar guard Expression or",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalar guard Expression or",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Scalar guard Expression and",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalar guard Expression and",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Scalar guard YAML or",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalar guard YAML or",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Scalar guard YAML and",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalar guard YAML and",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Two.md\",\n    \"file name\": \"Two\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Scalar guard YAML not",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalar guard YAML not",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Scalar guard Date and",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalar guard Date and",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Scalar guard Date or",
+      "args": [
+        "base:query",
+        "path=Edges/Cases.base",
+        "view=Scalar guard Date or",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Edges/Four.md\",\n    \"file name\": \"Four\"\n  },\n  {\n    \"path\": \"Edges/One.md\",\n    \"file name\": \"One\"\n  },\n  {\n    \"path\": \"Edges/Three.md\",\n    \"file name\": \"Three\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Explicit text ASC",
+      "args": [
+        "base:query",
+        "path=Ordering/Order.base",
+        "view=Explicit text ASC",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\",\n    \"label\": \"Task2\"\n  },\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\",\n    \"label\": \"Task10\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\",\n    \"label\": \"Task2\"\n  },\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\",\n    \"label\": \"Task10\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "Explicit text DESC",
+      "args": [
+        "base:query",
+        "path=Ordering/Order.base",
+        "view=Explicit text DESC",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\",\n    \"label\": \"Task10\"\n  },\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\",\n    \"label\": \"Task2\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Ordering/Note10.md\",\n    \"file name\": \"Note10\",\n    \"label\": \"Task10\"\n  },\n  {\n    \"path\": \"Ordering/Note2.md\",\n    \"file name\": \"Note2\",\n    \"label\": \"Task2\"\n  }\n]\n",
           "stderr": "",
           "exitCode": 0
         }
