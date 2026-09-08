@@ -1,0 +1,456 @@
+{
+  "provenance": {
+    "timezone": "America/Denver",
+    "provider": "Official Obsidian CLI",
+    "version": "1.13.7 (installer 1.12.4)",
+    "capturedAt": "2026-09-08T00:53:30.356Z",
+    "platform": "darwin",
+    "disposableVault": true,
+    "normalization": "None",
+    "fixtures": [
+      {
+        "path": "Audit/Cases.base",
+        "sha256": "7218dea3c50719113b649c0a50f3b3142d68470609ede30ef8edf04bccb6e798"
+      },
+      {
+        "path": "Audit/Dates/Audit-Empty.md",
+        "sha256": "b7180fe32ffcdbd4344ffde6438749bb338c67e89ba9e8dc526ee67239f7e16d"
+      },
+      {
+        "path": "Audit/Dates/Audit-False.md",
+        "sha256": "65ef7bb4cd4446d82c88106aa77fb4c94d896d7d97dbc03ab9dcc2171bbc2e9d"
+      },
+      {
+        "path": "Audit/Dates/Audit-Future.md",
+        "sha256": "a2c12cae0175cf1a1b630932740b47eb8a4c261464a00833bc97e9d9cfab58d8"
+      },
+      {
+        "path": "Audit/Dates/Audit-Invalid.md",
+        "sha256": "dcfff9dda5a41ee565ef6df98fd11dcc6f5709e049d06ace8ea889895b3a6feb"
+      },
+      {
+        "path": "Audit/Dates/Audit-List.md",
+        "sha256": "c3be151129a9be70d30e3564f97579d083e8041b8ed9bec1e5506a8f2c4e5c86"
+      },
+      {
+        "path": "Audit/Dates/Audit-Missing.md",
+        "sha256": "b3f3ad6c4b7cb516c8a706488e9c6d9b0d08ec89b6255d9e2cafb5b05d1b5f7b"
+      },
+      {
+        "path": "Audit/Dates/Audit-Null.md",
+        "sha256": "f47e069e6d339bda71dce96de13a281324d158d899b7f1acc318de16b73304f6"
+      },
+      {
+        "path": "Audit/Dates/Audit-Number.md",
+        "sha256": "9f1741a3213e0e2fd0c4a0c0eddf025aa67f9c376dfa157585991fcaaebc644b"
+      },
+      {
+        "path": "Audit/Dates/Audit-Offset.md",
+        "sha256": "649b865488cb5b92289a548f5dba1d349e38a77fe0918a63ea2ad1cd81ca71e8"
+      },
+      {
+        "path": "Audit/Dates/Audit-Past.md",
+        "sha256": "266940de691b2b16983ab6ccd55af4c5068d1a20e543042aac5879a51df0d51e"
+      },
+      {
+        "path": "Audit/Dates/Audit-Plain.md",
+        "sha256": "70377a399f5c51f1a55158a175f3e35a049f2a9401dbdeaef742399c3e5c4306"
+      },
+      {
+        "path": "Audit/Dates/Audit-Quoted.md",
+        "sha256": "321c799d278835437802aafa562b378e92246367cc92b7c46d757749d2fc72c0"
+      },
+      {
+        "path": "Audit/Dates/Audit-Timestamp.md",
+        "sha256": "fb82f7e59fc6e5bcd7b2d4ba800880edf5155905eda0cd2a6579b788144d472a"
+      },
+      {
+        "path": "Audit/Dates/Audit-Unpadded.md",
+        "sha256": "cd8c9a388008bebfd3912e37a64d72b21dc4d0c6846cb26e0f297284dc136229"
+      },
+      {
+        "path": "Audit/Files/.Hidden.md",
+        "sha256": "0b069e55ae2322f009633ff4bdf6eb096e94fe968b95fc283e6d76a3be491ff1"
+      },
+      {
+        "path": "Audit/Files/.private/Hidden.md",
+        "sha256": "8aaf2c065796c32b562996a6206a71d35691fe6492f69cb4e0509da4bd51deb0"
+      },
+      {
+        "path": "Audit/Files/Board.canvas",
+        "sha256": "fac3280e71ea8cd0a0243090b96652ce3bafec0bec655e24affe04bb6cbfaf1c"
+      },
+      {
+        "path": "Audit/Files/Pixel.png",
+        "sha256": "fa3e969661f0df8c64c1e1edd16b6b7f484a63d5ae5156e37dec26700b640a13"
+      },
+      {
+        "path": "Audit/Files/Table.csv",
+        "sha256": "492d5ea496056f1a6a6592241032fab764c321596317930b4fa0e1e8bc3b7470"
+      },
+      {
+        "path": "Audit/Files/Text.txt",
+        "sha256": "b9e68e1bea3e5b19ca6b2f98b73a54b73daafaa250484902e09982e07a12e733"
+      },
+      {
+        "path": "Audit/Files/Unknown.xyz",
+        "sha256": "6667b2d1aab6a00caa5aee5af8ad9f1465e567abf1c209d15727d57b3e8f6e5f"
+      },
+      {
+        "path": "Audit/Files/Visible.md",
+        "sha256": "b4d6625243cc6a6548257dbfe5f74bd68ba262c0b61b7f416ed926b4c0e10555"
+      },
+      {
+        "path": "Edges/Cases.base",
+        "sha256": "5a053e3a954ae6bbc03122eed69e1402678e8e0a2c39062a5082396c034aa912"
+      },
+      {
+        "path": "Edges/Four.md",
+        "sha256": "8e368f0d905b26d97bc5ba1639a43d8cd66a3ba2d26264069c3a3a1e72573565"
+      },
+      {
+        "path": "Edges/One.md",
+        "sha256": "a38cf7ae0401bd81fa60ee260711009f478e595148faa15f71dd624560646e54"
+      },
+      {
+        "path": "Edges/Three.md",
+        "sha256": "fd524989f4f93d18ac7e295c6cea51ffe119a6553a974f271dc58dc9484b0af0"
+      },
+      {
+        "path": "Edges/Two.md",
+        "sha256": "ed32a9fa37e9e33495b9ba7ed67e82a6e0d47942cff67aa60135fc165013a61c"
+      },
+      {
+        "path": "Fixture/Alpha.md",
+        "sha256": "9452405e85a3125ce9af130a4b11e254dda186046f71a0fed1f6d4b9de752bc9"
+      },
+      {
+        "path": "Fixture/Beta.md",
+        "sha256": "b8578bb39eeb1d747e510589af060a73a78b3b3bbe5d003fe3c91d6d38ead4fd"
+      },
+      {
+        "path": "Fixture/Blank.md",
+        "sha256": "2a6798affdf14f494ac59607596f0a5b053284559b9c01817fbf9338ec212d46"
+      },
+      {
+        "path": "Fixture/Cases.base",
+        "sha256": "6d1dae59509cda394a8bf231cf598fcda199ba86da428e67822a73c2f92030cc"
+      },
+      {
+        "path": "Fixture/Gamma.md",
+        "sha256": "f0ffe362356ddb4c3689d79615f42859659182d6bf4835fad0dddfa03ebc0d44"
+      },
+      {
+        "path": "Fixture/Missing.md",
+        "sha256": "8d4f368e25adb99d3dec525877808b49f65c7e8a95792a6e59d86d74e09d2563"
+      },
+      {
+        "path": "Ordering/Å.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/é.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/note1.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Ordering/Note10.md",
+        "sha256": "effc592b8f1ee6e49c581bd29dcc2b4c32e42cf9603fb45cfd69377c88c7df06"
+      },
+      {
+        "path": "Ordering/Note2.md",
+        "sha256": "0db01794e7324f67d9aecdd62f862bfd42366eee8dea01aa8b6af1d49c770d4b"
+      },
+      {
+        "path": "Ordering/Order.base",
+        "sha256": "5e5b90684e434d3bad5f105ee75dd6183c72c387fe88dd491dca21cf5ea64f0d"
+      },
+      {
+        "path": "Ordering/Z.md",
+        "sha256": "782fc6cbe595fe48856abbac4a86c4a520ebf84c0f8c8b9a41902d0bb240bf68"
+      },
+      {
+        "path": "Periods/Calendar/Active.md",
+        "sha256": "cce8f6508cd304204bb4bad0c61910a59b28006bc2d994e5cadcb358e72eef35"
+      },
+      {
+        "path": "Periods/Calendar/Past.md",
+        "sha256": "2d5fc6c5f689e3dfc4d62c191fcc572bd3f57058865bdefb3b5f23811ea28f88"
+      },
+      {
+        "path": "Periods/Tasks/Alias.md",
+        "sha256": "99f2f76f307cd6ca9767294a5b79f681d42db5641efb809376fc90926802d9f8"
+      },
+      {
+        "path": "Periods/Tasks/Current.md",
+        "sha256": "f07e389926ed616c618258e6026b5370893ca743902381522a6a5fb099366d67"
+      },
+      {
+        "path": "Periods/Tasks/Done.md",
+        "sha256": "3608d8dda84729f797cccdeb06bf572254627826d2f161fdfdc0e60e2e147673"
+      },
+      {
+        "path": "Periods/Tasks/Empty.md",
+        "sha256": "5e67e6ac2151c9307dafdf355e70e907d8517d803b5f8e41ec1696dcf0d304c8"
+      },
+      {
+        "path": "Periods/Tasks/Heading.md",
+        "sha256": "2b0bd33c16be0825bebf27653150879adbc9211b09cf84d2d1b55bd94a6fdb29"
+      },
+      {
+        "path": "Periods/Tasks/Missing.md",
+        "sha256": "f11a8770f71698002a2fb1e431d4525d74f49be72237b365aa4d51904b2f7781"
+      },
+      {
+        "path": "Periods/Tasks/Mixed.md",
+        "sha256": "3d8862315acee621f45ba793f415f1e241173f1e1d68a704757383ad7b40fd7d"
+      },
+      {
+        "path": "Periods/Tasks/Null.md",
+        "sha256": "b51c48856bb061a1902ed88bc9f9c76114298af36b3c0c470b0070d9f9be2de7"
+      },
+      {
+        "path": "Periods/Tasks/Old.md",
+        "sha256": "f64db63cdc8dd7dba9dacaca12ef4ccb70b61cb9c046912fc006c534e6af2a6e"
+      },
+      {
+        "path": "Periods/Tasks/Relative.md",
+        "sha256": "a4066f497ca88bf30cc5c8d5f70e3da1be31d889c9d2a521ecce9c66e67b9f8a"
+      },
+      {
+        "path": "Periods/Tasks/SelfAlias.md",
+        "sha256": "e2b9dc20c3871ced4c753be79f72a6af8b49ad911c5eda81360d661b61ae91c4"
+      },
+      {
+        "path": "Periods/Tasks/SelfBrackets.md",
+        "sha256": "7749ed3f0989f94971ce773bf2de1dfbb59ec0ef31face35e836d958b0c6afc3"
+      },
+      {
+        "path": "Periods/Tasks/SelfEmpty.md",
+        "sha256": "50011c3db1d4571767b334acf30848b292494b0e66bf5bef18b2c17f3fec25ce"
+      },
+      {
+        "path": "Periods/Tasks/SelfHeading.md",
+        "sha256": "e03222b47750799d3f5c710d982975442ac27e1a0623b61768e8963b394a70ea"
+      },
+      {
+        "path": "Periods/Tasks/SelfNull.md",
+        "sha256": "7f60529b02d51149a11b94004e2ee3581c479ca781dc07e31f56a51ab1b8c888"
+      },
+      {
+        "path": "Periods/Tasks/SelfPlainHeading.md",
+        "sha256": "f3317ecfd5bf3c678c1ff530b0334951312c80d3de64b8c72ff0d32004de1a69"
+      },
+      {
+        "path": "Periods/Tasks/Unresolved.md",
+        "sha256": "d95c686d374935a1b1bf9da31bb55dc9a94fbba9753aaa3adeb2963aa240f2ce"
+      },
+      {
+        "path": "Periods/Views.base",
+        "sha256": "b32c8598d47d73fc85d297060c5571091fb35db8d0fa9d496eacd2d2dc342db3"
+      },
+      {
+        "path": "Reminders/People/Person.md",
+        "sha256": "90c66aaff97adb0299260634cb051e17f2773ebd85eaefa0f46c4feb4b3871ac"
+      },
+      {
+        "path": "Reminders/People/Reviewed.md",
+        "sha256": "abb431bea0bf15f7d28676983d470ff0891f012cdd0dd8d6ea962500f50e3ead"
+      },
+      {
+        "path": "Reminders/Sweeps.base",
+        "sha256": "a453e0034d8f52e448d58826f2b8480f2c3a85948ec0e1236dd4f9b384527bae"
+      },
+      {
+        "path": "Reminders/Tasks/Action.md",
+        "sha256": "65ada43fbc2ecd3a5cc0fdb9bb414bc0b5b1cb673f0426496714e21e95a46072"
+      },
+      {
+        "path": "Reminders/Tasks/LinkedDone.md",
+        "sha256": "9c3810b1a1f6bc00828f68f88af055d23d4841c0f500db08ec3155f3167c3e70"
+      },
+      {
+        "path": "Reminders/Tasks/Overlap.md",
+        "sha256": "a8111fe7121393d8f265b45dbf6320612d68906641393f89111a8e2463335659"
+      },
+      {
+        "path": "Reminders/Tasks/PlainDone.md",
+        "sha256": "c74a1fe6aa952960b8a1c8a7241a1a173f459f4ab366457cc3334b7e89d04da5"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "audit-plain-dates",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Plain dates",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-empty-dates",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Empty dates",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-scalar-dates",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Scalar dates",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Invalid.md\",\n    \"file name\": \"Audit-Invalid\",\n    \"review_on\": \"2026-03-02\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Number.md\",\n    \"file name\": \"Audit-Number\",\n    \"review_on\": \"42\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Invalid.md\",\n    \"file name\": \"Audit-Invalid\",\n    \"review_on\": \"2026-03-02\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Number.md\",\n    \"file name\": \"Audit-Number\",\n    \"review_on\": \"42\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-equality",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Equality",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Offset.md\",\n    \"file name\": \"Audit-Offset\",\n    \"review_on\": \"2026-09-07T10:00:00\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Timestamp.md\",\n    \"file name\": \"Audit-Timestamp\",\n    \"review_on\": \"2026-09-07T06:00:00\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Offset.md\",\n    \"file name\": \"Audit-Offset\",\n    \"review_on\": \"2026-09-07T10:00:00\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Timestamp.md\",\n    \"file name\": \"Audit-Timestamp\",\n    \"review_on\": \"2026-09-07T06:00:00\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-list-date",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=List date",
+        "format=json"
+      ],
+      "stdout": "[]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-membership",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Membership",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\",\n    \"file base name\": \"Visible\",\n    \"file extension\": \"md\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\",\n    \"file base name\": \"Visible\",\n    \"file extension\": \"md\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-markdown-membership",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Markdown membership",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-date-columns",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Date columns",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-False.md\",\n    \"file name\": \"Audit-False\",\n    \"review_on\": \"false\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Future.md\",\n    \"file name\": \"Audit-Future\",\n    \"review_on\": \"2026-09-08\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Invalid.md\",\n    \"file name\": \"Audit-Invalid\",\n    \"review_on\": \"2026-03-02\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-List.md\",\n    \"file name\": \"Audit-List\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Missing.md\",\n    \"file name\": \"Audit-Missing\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Null.md\",\n    \"file name\": \"Audit-Null\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Number.md\",\n    \"file name\": \"Audit-Number\",\n    \"review_on\": \"42\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Offset.md\",\n    \"file name\": \"Audit-Offset\",\n    \"review_on\": \"2026-09-07T10:00:00\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Timestamp.md\",\n    \"file name\": \"Audit-Timestamp\",\n    \"review_on\": \"2026-09-07T06:00:00\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Unpadded.md\",\n    \"file name\": \"Audit-Unpadded\",\n    \"review_on\": \"2026-9-7\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-False.md\",\n    \"file name\": \"Audit-False\",\n    \"review_on\": \"false\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Future.md\",\n    \"file name\": \"Audit-Future\",\n    \"review_on\": \"2026-09-08\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Invalid.md\",\n    \"file name\": \"Audit-Invalid\",\n    \"review_on\": \"2026-03-02\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-List.md\",\n    \"file name\": \"Audit-List\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Missing.md\",\n    \"file name\": \"Audit-Missing\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Null.md\",\n    \"file name\": \"Audit-Null\",\n    \"review_on\": null\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Number.md\",\n    \"file name\": \"Audit-Number\",\n    \"review_on\": \"42\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Offset.md\",\n    \"file name\": \"Audit-Offset\",\n    \"review_on\": \"2026-09-07T10:00:00\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Timestamp.md\",\n    \"file name\": \"Audit-Timestamp\",\n    \"review_on\": \"2026-09-07T06:00:00\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Unpadded.md\",\n    \"file name\": \"Audit-Unpadded\",\n    \"review_on\": \"2026-9-7\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-native-files",
+      "args": [
+        "files",
+        "folder=Audit/Files"
+      ],
+      "stdout": "Audit/Files/Board.canvas\nAudit/Files/Pixel.png\nAudit/Files/Table.csv\nAudit/Files/Text.txt\nAudit/Files/Unknown.xyz\nAudit/Files/Visible.md\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "Audit/Files/Board.canvas\nAudit/Files/Pixel.png\nAudit/Files/Table.csv\nAudit/Files/Text.txt\nAudit/Files/Unknown.xyz\nAudit/Files/Visible.md\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    }
+  ]
+}

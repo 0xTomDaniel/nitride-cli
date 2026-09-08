@@ -61,6 +61,9 @@ it("rejects ambiguous linked notes instead of selecting an arbitrary period", ()
   }));
 it("rejects traversal and nested list values in linked-period expressions", () =>
   scenario((root) => {
+    // A Base file is not itself a native query candidate. Exercise resolution
+    // from a real Markdown row rather than depending on the old candidate bug.
+    writeFileSync(join(root, "Note.md"), "# Synthetic note\n");
     writeFileSync(
       join(root, "Test.base"),
       base('file("../../Outside").properties.week_start != null'),

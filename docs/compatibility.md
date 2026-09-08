@@ -9,7 +9,7 @@ characterization must use a disposable synthetic vault, never a personal vault.
 ## Verified reference
 
 The checked-in [recording](../tests/fixtures/native-results.json) contains
-80 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
+84 successful cases from Obsidian **1.13.7 (installer 1.12.4)** on macOS.
 The recorder verified that the disposable vault exactly matched committed
 fixtures before and after capture. Outputs are unmodified, with command arguments,
 exit status, stderr, retry attempts, fixture hashes, and capture provenance.
@@ -25,9 +25,9 @@ omitted when combining filters; a wholly empty filter imposes no restriction.
 Boolean evaluation short-circuits in expressions and YAML groups, while syntax
 validation still examines every selected branch before scanning.
 
-These fixtures explicitly scope note scans to Markdown. General non-Markdown
-candidate selection and mixed relational/equality coercion beyond the recordings
-still need characterization; the review fixes do not establish those contracts.
+The Phase 2 audit adds explicit Markdown/non-Markdown/hidden-file membership and
+calendar-date observations. See [the audit](compatibility-audit.md) for supported
+cases, deliberately unclaimed coercions and caller requirements.
 
 ## Commands
 

@@ -3,11 +3,103 @@
     "timezone": "America/Denver",
     "provider": "Official Obsidian CLI",
     "version": "1.13.7 (installer 1.12.4)",
-    "capturedAt": "2026-09-07T22:35:34.446Z",
+    "capturedAt": "2026-09-08T00:52:32.865Z",
     "platform": "darwin",
     "disposableVault": true,
     "normalization": "None",
     "fixtures": [
+      {
+        "path": "Audit/Cases.base",
+        "sha256": "7218dea3c50719113b649c0a50f3b3142d68470609ede30ef8edf04bccb6e798"
+      },
+      {
+        "path": "Audit/Dates/Audit-Empty.md",
+        "sha256": "b7180fe32ffcdbd4344ffde6438749bb338c67e89ba9e8dc526ee67239f7e16d"
+      },
+      {
+        "path": "Audit/Dates/Audit-False.md",
+        "sha256": "65ef7bb4cd4446d82c88106aa77fb4c94d896d7d97dbc03ab9dcc2171bbc2e9d"
+      },
+      {
+        "path": "Audit/Dates/Audit-Future.md",
+        "sha256": "a2c12cae0175cf1a1b630932740b47eb8a4c261464a00833bc97e9d9cfab58d8"
+      },
+      {
+        "path": "Audit/Dates/Audit-Invalid.md",
+        "sha256": "dcfff9dda5a41ee565ef6df98fd11dcc6f5709e049d06ace8ea889895b3a6feb"
+      },
+      {
+        "path": "Audit/Dates/Audit-List.md",
+        "sha256": "c3be151129a9be70d30e3564f97579d083e8041b8ed9bec1e5506a8f2c4e5c86"
+      },
+      {
+        "path": "Audit/Dates/Audit-Missing.md",
+        "sha256": "b3f3ad6c4b7cb516c8a706488e9c6d9b0d08ec89b6255d9e2cafb5b05d1b5f7b"
+      },
+      {
+        "path": "Audit/Dates/Audit-Null.md",
+        "sha256": "f47e069e6d339bda71dce96de13a281324d158d899b7f1acc318de16b73304f6"
+      },
+      {
+        "path": "Audit/Dates/Audit-Number.md",
+        "sha256": "9f1741a3213e0e2fd0c4a0c0eddf025aa67f9c376dfa157585991fcaaebc644b"
+      },
+      {
+        "path": "Audit/Dates/Audit-Offset.md",
+        "sha256": "649b865488cb5b92289a548f5dba1d349e38a77fe0918a63ea2ad1cd81ca71e8"
+      },
+      {
+        "path": "Audit/Dates/Audit-Past.md",
+        "sha256": "266940de691b2b16983ab6ccd55af4c5068d1a20e543042aac5879a51df0d51e"
+      },
+      {
+        "path": "Audit/Dates/Audit-Plain.md",
+        "sha256": "70377a399f5c51f1a55158a175f3e35a049f2a9401dbdeaef742399c3e5c4306"
+      },
+      {
+        "path": "Audit/Dates/Audit-Quoted.md",
+        "sha256": "321c799d278835437802aafa562b378e92246367cc92b7c46d757749d2fc72c0"
+      },
+      {
+        "path": "Audit/Dates/Audit-Timestamp.md",
+        "sha256": "fb82f7e59fc6e5bcd7b2d4ba800880edf5155905eda0cd2a6579b788144d472a"
+      },
+      {
+        "path": "Audit/Dates/Audit-Unpadded.md",
+        "sha256": "cd8c9a388008bebfd3912e37a64d72b21dc4d0c6846cb26e0f297284dc136229"
+      },
+      {
+        "path": "Audit/Files/.Hidden.md",
+        "sha256": "0b069e55ae2322f009633ff4bdf6eb096e94fe968b95fc283e6d76a3be491ff1"
+      },
+      {
+        "path": "Audit/Files/.private/Hidden.md",
+        "sha256": "8aaf2c065796c32b562996a6206a71d35691fe6492f69cb4e0509da4bd51deb0"
+      },
+      {
+        "path": "Audit/Files/Board.canvas",
+        "sha256": "fac3280e71ea8cd0a0243090b96652ce3bafec0bec655e24affe04bb6cbfaf1c"
+      },
+      {
+        "path": "Audit/Files/Pixel.png",
+        "sha256": "fa3e969661f0df8c64c1e1edd16b6b7f484a63d5ae5156e37dec26700b640a13"
+      },
+      {
+        "path": "Audit/Files/Table.csv",
+        "sha256": "492d5ea496056f1a6a6592241032fab764c321596317930b4fa0e1e8bc3b7470"
+      },
+      {
+        "path": "Audit/Files/Text.txt",
+        "sha256": "b9e68e1bea3e5b19ca6b2f98b73a54b73daafaa250484902e09982e07a12e733"
+      },
+      {
+        "path": "Audit/Files/Unknown.xyz",
+        "sha256": "6667b2d1aab6a00caa5aee5af8ad9f1465e567abf1c209d15727d57b3e8f6e5f"
+      },
+      {
+        "path": "Audit/Files/Visible.md",
+        "sha256": "b4d6625243cc6a6548257dbfe5f74bd68ba262c0b61b7f416ed926b4c0e10555"
+      },
       {
         "path": "Edges/Cases.base",
         "sha256": "5a053e3a954ae6bbc03122eed69e1402678e8e0a2c39062a5082396c034aa912"
@@ -500,12 +592,12 @@
       "args": [
         "bases"
       ],
-      "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nPeriods/Views.base\nReminders/Sweeps.base\n",
+      "stdout": "Audit/Cases.base\nEdges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nPeriods/Views.base\nReminders/Sweeps.base\n",
       "stderr": "",
       "exitCode": 0,
       "attempts": [
         {
-          "stdout": "Edges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nPeriods/Views.base\nReminders/Sweeps.base\n",
+          "stdout": "Audit/Cases.base\nEdges/Cases.base\nFixture/Cases.base\nOrdering/Order.base\nPeriods/Views.base\nReminders/Sweeps.base\n",
           "stderr": "",
           "exitCode": 0
         }
@@ -1706,6 +1798,82 @@
       "attempts": [
         {
           "stdout": "[\n  {\n    \"path\": \"Periods/Tasks/SelfAlias.md\",\n    \"file name\": \"SelfAlias\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfBrackets.md\",\n    \"file name\": \"SelfBrackets\"\n  },\n  {\n    \"path\": \"Periods/Tasks/SelfHeading.md\",\n    \"file name\": \"SelfHeading\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-plain-dates",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Plain dates",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Past.md\",\n    \"file name\": \"Audit-Past\",\n    \"review_on\": \"2026-09-06\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Plain.md\",\n    \"file name\": \"Audit-Plain\",\n    \"review_on\": \"2026-09-07\"\n  },\n  {\n    \"path\": \"Audit/Dates/Audit-Quoted.md\",\n    \"file name\": \"Audit-Quoted\",\n    \"review_on\": \"2026-09-07\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-empty-dates",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Empty dates",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Dates/Audit-Empty.md\",\n    \"file name\": \"Audit-Empty\",\n    \"review_on\": null\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-membership",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Membership",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\",\n    \"file base name\": \"Visible\",\n    \"file extension\": \"md\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\",\n    \"file base name\": \"Visible\",\n    \"file extension\": \"md\"\n  }\n]\n",
+          "stderr": "",
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "audit-markdown-membership",
+      "args": [
+        "base:query",
+        "path=Audit/Cases.base",
+        "view=Markdown membership",
+        "format=json"
+      ],
+      "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\"\n  }\n]\n",
+      "stderr": "",
+      "exitCode": 0,
+      "attempts": [
+        {
+          "stdout": "[\n  {\n    \"path\": \"Audit/Files/Visible.md\",\n    \"file name\": \"Visible\"\n  }\n]\n",
           "stderr": "",
           "exitCode": 0
         }

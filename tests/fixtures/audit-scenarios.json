@@ -1,0 +1,81 @@
+[
+  {
+    "name": "audit-plain-dates",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Plain dates",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-empty-dates",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Empty dates",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-scalar-dates",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Scalar dates",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-equality",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Equality",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-list-date",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=List date",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-membership",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Membership",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-markdown-membership",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Markdown membership",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-date-columns",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Date columns",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-native-files",
+    "args": [
+      "files",
+      "folder=Audit/Files"
+    ]
+  }
+]

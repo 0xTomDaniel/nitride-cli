@@ -14,6 +14,7 @@ const { values } = parseArgs({
     path: { type: "string" },
     binary: { type: "string", default: "obsidian" },
     out: { type: "string", default: "tests/fixtures/native-results.json" },
+    scenarios: { type: "string", default: "tests/fixtures/scenarios.json" },
   },
 });
 if (!values.vault || !values.path)
@@ -56,9 +57,7 @@ if (JSON.stringify(inventory(root)) !== JSON.stringify(expected))
   throw Error(
     "Native vault must contain only an exact copy of tests/fixtures/vault (plus .obsidian)",
   );
-const scenarios = JSON.parse(
-  readFileSync("tests/fixtures/scenarios.json", "utf8"),
-);
+const scenarios = JSON.parse(readFileSync(values.scenarios, "utf8"));
 const cases = [];
 const captureDay = new Intl.DateTimeFormat("en-CA").format(new Date());
 for (const scenario of scenarios) {
