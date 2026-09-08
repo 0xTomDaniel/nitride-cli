@@ -1,0 +1,76 @@
+{
+  "views": [
+    {
+      "type": "table",
+      "name": "Plain dates",
+      "filters": "file.path.startsWith(\"Audit/Dates/\") && (file.name == \"Audit-Plain\" || file.name == \"Audit-Quoted\" || file.name == \"Audit-Past\" || file.name == \"Audit-Future\") && review_on <= date(\"2026-09-07\")",
+      "order": [
+        "file.name",
+        "review_on"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Empty dates",
+      "filters": "file.path.startsWith(\"Audit/Dates/\") && (file.name == \"Audit-Empty\" || file.name == \"Audit-Null\" || file.name == \"Audit-Missing\") && review_on <= date(\"2026-09-07\")",
+      "order": [
+        "file.name",
+        "review_on"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Scalar dates",
+      "filters": "file.path.startsWith(\"Audit/Dates/\") && file.name != \"Audit-List\" && review_on <= date(\"2026-09-07\")",
+      "order": [
+        "file.name",
+        "review_on"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Equality",
+      "filters": "file.path.startsWith(\"Audit/Dates/\") && file.name != \"Audit-List\" && review_on == date(\"2026-09-07\")",
+      "order": [
+        "file.name",
+        "review_on"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "List date",
+      "filters": "file.path.startsWith(\"Audit/Dates/\") && file.name == \"Audit-List\" && review_on <= date(\"2026-09-07\")",
+      "order": [
+        "file.name",
+        "review_on"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Membership",
+      "filters": "file.path.startsWith(\"Audit/Files/\")",
+      "order": [
+        "file.name",
+        "file.basename",
+        "file.ext"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Markdown membership",
+      "filters": "file.path.startsWith(\"Audit/Files/\") && file.ext == \"md\"",
+      "order": [
+        "file.name"
+      ]
+    },
+    {
+      "type": "table",
+      "name": "Date columns",
+      "filters": "file.path.startsWith(\"Audit/Dates/\")",
+      "order": [
+        "file.name",
+        "review_on"
+      ]
+    }
+  ]
+}

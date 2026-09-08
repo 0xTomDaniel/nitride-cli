@@ -715,5 +715,41 @@
       "view=Self references",
       "format=json"
     ]
+  },
+  {
+    "name": "audit-plain-dates",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Plain dates",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-empty-dates",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Empty dates",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-membership",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Membership",
+      "format=json"
+    ]
+  },
+  {
+    "name": "audit-markdown-membership",
+    "args": [
+      "base:query",
+      "path=Audit/Cases.base",
+      "view=Markdown membership",
+      "format=json"
+    ]
   }
 ]

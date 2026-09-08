@@ -227,7 +227,10 @@ export function query(
     index.set(path, row);
   }
   const rows = [...index.values()].filter(
-    (row) => (globalFilter?.(row) ?? true) && (viewFilter?.(row) ?? true),
+    (row) =>
+      row.file.ext === "md" &&
+      (globalFilter?.(row) ?? true) &&
+      (viewFilter?.(row) ?? true),
   );
   const collator = new Intl.Collator("en", {
     numeric: true,

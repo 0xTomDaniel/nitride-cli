@@ -12,6 +12,8 @@ Commands: `bases`, `base:views`, `base:query`, `help`, `version`.
 - `--timezone` defaults to UTC. `--date YYYY-MM-DD` overrides `today()`.
 - Output JSON preserves native rendered-cell strings/nulls, not raw YAML types.
   All formats are buffered; failures produce no successful partial stdout.
+- Base query candidates are Markdown only, matching the recorded native CLI.
+  Discovery and linked-file resolution still inspect visible vault paths.
 - Dot files/directories are excluded. Visible symlinks and invalid UTF-8 fail.
   Markdown frontmatter must be valid YAML with unique keys and no aliases or
   custom tags. Strict whole-vault metadata parsing can reject a malformed note
@@ -53,3 +55,15 @@ Default filename ordering uses English natural collation, as captured from the
 reference app; other locale configurations have not been characterized. Simple
 wikilink cells are supported, but alias/target-resolution equivalence is not
 a verified compatibility claim.
+
+Date/property limits established by the Phase 2 audit: canonical ISO calendar-day
+strings (quoted or unquoted) have recorded comparison coverage. Native datetime
+normalization, malformed-date rollover, numeric/date coercion and list/date
+comparison do not have matching semantics. Do not use those values for reminder
+queries: callers must validate their date fields before querying. Generic scalar
+expressions can otherwise return different results; Nitride does not infer a
+caller-specific date schema. Empty strings and null are distinct in predicates.
+
+Ten public-process clock cases cover Denver midnight and both DST transitions,
+with an independently controlled wall clock and a different host TZ. They verify
+Nitride's clock behavior, not a manipulated reference-app clock.
